@@ -13,6 +13,7 @@ const DateRange = resolve => require(['./pages/daterange/index'], resolve);
 const Pagination = resolve => require(['./pages/pagination/index'], resolve);
 const Input = resolve => require(['./pages/input/index'], resolve);
 const Form = resolve => require(['./pages/form/index'], resolve);
+const Steps = resolve => require(['./pages/steps/index'], resolve);
 
 let routers = {
     path: '/',
@@ -51,6 +52,7 @@ let routers = {
         {path: 'Pagination', getComponent: (next, cb)=>{Pagination((a)=>{cb(null, a.default);});}},
         {path: 'Input', getComponent: (next, cb)=>{Input((a)=>{cb(null, a.default);});}},
         {path: 'Form', getComponent: (next, cb)=>{Form((a)=>{cb(null, a.default);});}},
+        {path: 'Steps', getComponent: (next, cb)=>{Steps((a)=>{cb(null, a.default);});}},
     ]
 };
 
