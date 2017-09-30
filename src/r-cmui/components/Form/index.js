@@ -144,7 +144,7 @@ class Form extends BaseComponent {
      * @method submit
      */
     submit = ()=>{
-        let {customParams, success, error, ajax} = this.props;
+        let {customParams, ajax} = this.props;
         let method = this.method;
         if (this.isValid()) {
             if (ajax) {
@@ -224,7 +224,7 @@ class Form extends BaseComponent {
 
         if (this.props.component && this.props.component === 'div') {
             return (
-                <div ref='form' className={className} style={style}>
+                <div ref="form" className={className} style={style}>
                     {this.renderChildren()}
                     <div style={{'textAlign': 'center'}}>
                         {this.renderSubmit()}
@@ -233,7 +233,7 @@ class Form extends BaseComponent {
             );
         } else {
             return (
-                <form ref='form' className={className} style={style} encType={encType} action={this.action}
+                <form ref="form" className={className} style={style} encType={encType} action={this.action}
                     method={this.method || 'post'} target={this.target}>
                     {this.renderChildren()}
                     <div style={{'textAlign': 'center'}}>

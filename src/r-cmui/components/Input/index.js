@@ -21,7 +21,7 @@ import './Input.less';
  * @extend BaseComponent
  */
 class Input extends BaseComponent {
-    static displayName = "Input";
+    static displayName = 'Input';
     static defaultProps = {
         trigger: 'blur',
         value: '',
@@ -166,7 +166,10 @@ class Input extends BaseComponent {
             props[handle] = this.onBlur;
         }
 
-        return (<input {...filterProps(this.props)} {...props} />);
+        let others = filterProps(this.props);
+        delete others['data-valueType'];
+
+        return (<input {...others} {...props} />);
     }
 }
 
