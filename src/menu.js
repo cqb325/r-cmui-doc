@@ -16,6 +16,7 @@ export default {
                 {text: 'Input', link: 'Input', comp: 'input/index'},
                 {text: 'Form', link: 'Form', comp: 'form/index'},
                 {text: 'Steps', link: 'Steps', comp: 'steps/index'},
+                {text: 'Switch', link: 'Switch', comp: 'switch/index'},
             ]
         }
     ]
