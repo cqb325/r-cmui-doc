@@ -17,6 +17,29 @@ export default {
                 {text: 'Form', link: 'Form', comp: 'form/index'},
                 {text: 'Steps', link: 'Steps', comp: 'steps/index'},
                 {text: 'Switch', link: 'Switch', comp: 'switch/index'},
+                {text: 'Card', link: 'Card', comp: 'card/index'},
+                {text: 'Panel', link: 'Panel', comp: 'panel/index'},
+                {text: 'Tooltip', link: 'Tooltip', comp: 'tooltip/index'},
+                {text: 'MessageBox', link: 'MessageBox', comp: 'messagebox/index'},
+                {text: 'Dialog', link: 'Dialog', comp: 'dialog/index'},
+                {text: 'Menu', link: 'Menu', comp: 'menu/index'},
+                {text: 'Tree', link: 'Tree', comp: 'tree/index'},
+                {text: 'Select', link: 'Select', comp: 'select/index'},
+                {text: 'Table', link: 'Table', comp: 'table/index'},
+                {text: 'Progress', link: 'Progress', comp: 'progress/index'},
+                {text: 'Slick', link: 'Slick', comp: 'slick/index'},
+                {text: 'Spin', link: 'Spin', comp: 'spin/index'},
+                {text: 'Uploadify', link: 'Uploadify', comp: 'uploadify/index'},
+                {text: 'Badge', link: 'Badge', comp: 'badge/index'},
+                {text: 'Dropdown', link: 'Dropdown', comp: 'dropdown/index'},
+                {text: 'Accordion', link: 'Accordion', comp: 'accordion/index'},
+                {text: 'InputNumber', link: 'InputNumber', comp: 'inputnumber/index'},
+                {text: 'Notification', link: 'Notification', comp: 'notification/index'},
+            ]
+        },
+        {
+            text: '业务组件', children: [
+                {text: '列表页', link: 'PageList', comp: 'pagelist/index'},
             ]
         }
     ]

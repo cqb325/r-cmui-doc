@@ -15,6 +15,25 @@ const Input = resolve => require(['./pages/input/index'], resolve);
 const Form = resolve => require(['./pages/form/index'], resolve);
 const Steps = resolve => require(['./pages/steps/index'], resolve);
 const Switch = resolve => require(['./pages/switch/index'], resolve);
+const Card = resolve => require(['./pages/card/index'], resolve);
+const Panel = resolve => require(['./pages/panel/index'], resolve);
+const Tooltip = resolve => require(['./pages/tooltip/index'], resolve);
+const MessageBox = resolve => require(['./pages/messagebox/index'], resolve);
+const Dialog = resolve => require(['./pages/dialog/index'], resolve);
+const Menu = resolve => require(['./pages/menu/index'], resolve);
+const Tree = resolve => require(['./pages/tree/index'], resolve);
+const Select = resolve => require(['./pages/select/index'], resolve);
+const Table = resolve => require(['./pages/table/index'], resolve);
+const Progress = resolve => require(['./pages/progress/index'], resolve);
+const Slick = resolve => require(['./pages/slick/index'], resolve);
+const Spin = resolve => require(['./pages/spin/index'], resolve);
+const Uploadify = resolve => require(['./pages/uploadify/index'], resolve);
+const Badge = resolve => require(['./pages/badge/index'], resolve);
+const Dropdown = resolve => require(['./pages/dropdown/index'], resolve);
+const Accordion = resolve => require(['./pages/accordion/index'], resolve);
+const InputNumber = resolve => require(['./pages/inputnumber/index'], resolve);
+const Notification = resolve => require(['./pages/notification/index'], resolve);
+const PageList = resolve => require(['./pages/pagelist/index'], resolve);
 
 let routers = {
     path: '/',
@@ -55,6 +74,25 @@ let routers = {
         {path: 'Form', getComponent: (next, cb)=>{Form((a)=>{cb(null, a.default);});}},
         {path: 'Steps', getComponent: (next, cb)=>{Steps((a)=>{cb(null, a.default);});}},
         {path: 'Switch', getComponent: (next, cb)=>{Switch((a)=>{cb(null, a.default);});}},
+        {path: 'Card', getComponent: (next, cb)=>{Card((a)=>{cb(null, a.default);});}},
+        {path: 'Panel', getComponent: (next, cb)=>{Panel((a)=>{cb(null, a.default);});}},
+        {path: 'Tooltip', getComponent: (next, cb)=>{Tooltip((a)=>{cb(null, a.default);});}},
+        {path: 'MessageBox', getComponent: (next, cb)=>{MessageBox((a)=>{cb(null, a.default);});}},
+        {path: 'Dialog', getComponent: (next, cb)=>{Dialog((a)=>{cb(null, a.default);});}},
+        {path: 'Menu', getComponent: (next, cb)=>{Menu((a)=>{cb(null, a.default);});}},
+        {path: 'Tree', getComponent: (next, cb)=>{Tree((a)=>{cb(null, a.default);});}},
+        {path: 'Select', getComponent: (next, cb)=>{Select((a)=>{cb(null, a.default);});}},
+        {path: 'Table', getComponent: (next, cb)=>{Table((a)=>{cb(null, a.default);});}},
+        {path: 'Progress', getComponent: (next, cb)=>{Progress((a)=>{cb(null, a.default);});}},
+        {path: 'Slick', getComponent: (next, cb)=>{Slick((a)=>{cb(null, a.default);});}},
+        {path: 'Spin', getComponent: (next, cb)=>{Spin((a)=>{cb(null, a.default);});}},
+        {path: 'Uploadify', getComponent: (next, cb)=>{Uploadify((a)=>{cb(null, a.default);});}},
+        {path: 'Badge', getComponent: (next, cb)=>{Badge((a)=>{cb(null, a.default);});}},
+        {path: 'Dropdown', getComponent: (next, cb)=>{Dropdown((a)=>{cb(null, a.default);});}},
+        {path: 'Accordion', getComponent: (next, cb)=>{Accordion((a)=>{cb(null, a.default);});}},
+        {path: 'InputNumber', getComponent: (next, cb)=>{InputNumber((a)=>{cb(null, a.default);});}},
+        {path: 'Notification', getComponent: (next, cb)=>{Notification((a)=>{cb(null, a.default);});}},
+        {path: 'PageList', getComponent: (next, cb)=>{PageList((a)=>{cb(null, a.default);});}},
     ]
 };
 

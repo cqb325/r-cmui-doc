@@ -37,11 +37,11 @@ class Nav extends PureComponent{
                     {icon}{menuItem.text}
                 </Menu.Item>;
             }else{
-                return <SubMenu key={this.menuIndex} title={menuItem.icon? <span><FontIcon icon={menuItem.icon}></FontIcon>{menuItem.text}</span>
+                return <MenuItemGroup key={this.menuIndex} title={menuItem.icon? <span><FontIcon icon={menuItem.icon}></FontIcon>{menuItem.text}</span>
                     : menuItem.text
                 }>
                     {this.renderSubMenu(menuItem.children)}
-                </SubMenu>;
+                </MenuItemGroup>;
             }
         });
     }
@@ -78,7 +78,7 @@ class Nav extends PureComponent{
 
     render(){
         return (
-            <Menu ref="menu" style={{width: 200}} theme="dark" onSelect={this.gotoPage.bind(this)}>
+            <Menu ref="menu" style={{width: 200}} theme="light" onSelect={this.gotoPage.bind(this)}>
                 {this.renderMenu()}
             </Menu>
         );
