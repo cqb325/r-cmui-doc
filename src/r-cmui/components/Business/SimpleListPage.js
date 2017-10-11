@@ -82,7 +82,7 @@ class SimpleListPage extends React.Component{
             searchBtn = Dom.query(this.props.searchBtn || '#search-btn');
         }
         if(searchBtn){
-            if(typeof searchBtn === 'string'){
+            if(searchBtn.tagName){
                 Events.on(searchBtn, 'click', ()=>{
                     let pageSize = 10;
                     if(this.refs.pagination) {

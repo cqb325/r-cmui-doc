@@ -34,6 +34,8 @@ const Accordion = resolve => require(['./pages/accordion/index'], resolve);
 const InputNumber = resolve => require(['./pages/inputnumber/index'], resolve);
 const Notification = resolve => require(['./pages/notification/index'], resolve);
 const PageList = resolve => require(['./pages/pagelist/index'], resolve);
+const SimpleForm = resolve => require(['./pages/simpleform/index'], resolve);
+const TableForm = resolve => require(['./pages/tableform/index'], resolve);
 
 let routers = {
     path: '/',
@@ -93,6 +95,8 @@ let routers = {
         {path: 'InputNumber', getComponent: (next, cb)=>{InputNumber((a)=>{cb(null, a.default);});}},
         {path: 'Notification', getComponent: (next, cb)=>{Notification((a)=>{cb(null, a.default);});}},
         {path: 'PageList', getComponent: (next, cb)=>{PageList((a)=>{cb(null, a.default);});}},
+        {path: 'SimpleForm', getComponent: (next, cb)=>{SimpleForm((a)=>{cb(null, a.default);});}},
+        {path: 'TableForm', getComponent: (next, cb)=>{TableForm((a)=>{cb(null, a.default);});}},
     ]
 };
 

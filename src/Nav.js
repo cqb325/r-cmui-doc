@@ -78,7 +78,7 @@ class Nav extends PureComponent{
 
     render(){
         return (
-            <Menu ref="menu" style={{width: 200}} theme="light" onSelect={this.gotoPage.bind(this)}>
+            <Menu ref="menu" style={{width: 200}} startIndex={2} theme="light" onSelect={this.gotoPage.bind(this)}>
                 {this.renderMenu()}
             </Menu>
         );

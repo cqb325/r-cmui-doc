@@ -40,6 +40,8 @@ export default {
         {
             text: '业务组件', children: [
                 {text: '列表页', link: 'PageList', comp: 'pagelist/index'},
+                {text: '表单', link: 'SimpleForm', comp: 'simpleform/index'},
+                {text: '表格表单', link: 'TableForm', comp: 'tableform/index'},
             ]
         }
     ]
