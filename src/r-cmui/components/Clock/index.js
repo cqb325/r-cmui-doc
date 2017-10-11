@@ -16,7 +16,7 @@ import './Clock.less';
  * @extend BaseComponent
  */
 class Clock extends BaseComponent {
-    static displayName = "Clock";
+    static displayName = 'Clock';
 
     static defaultProps = {
         value: '00:00:00',
@@ -51,7 +51,7 @@ class Clock extends BaseComponent {
             time.set('minute', parseInt(arr[1], 10));
             time.set('second', parseInt(arr[2], 10));
             time.set('millisecond', 0);
-            
+
             this.setState({ current: time });
         }
     }
@@ -120,7 +120,7 @@ class Clock extends BaseComponent {
             hr = this.lastHourDeg + off * 30;
             this.lastHourDeg = hr;
         }
-        
+
         let secondStyle = {
             'transform': 'rotateZ(' + sr + 'deg)',
             'msTransform': 'rotate(' + sr + 'deg)'
@@ -134,18 +134,18 @@ class Clock extends BaseComponent {
             'msTransform': 'rotate(' + hr + 'deg)'
         };
         return (
-            <div className='click-hands'>
-                <div className='hourHand' style={hourStyle} />
-                <div className='minuteHand' style={minuteStyle} />
-                <div className='secondHand' style={secondStyle} />
+            <div className="click-hands">
+                <div className="hourHand" style={hourStyle} />
+                <div className="minuteHand" style={minuteStyle} />
+                <div className="secondHand" style={secondStyle} />
             </div>
         );
     }
 
     /**
      * 重新计算角度
-     * @param {*} lastDeg 
-     * @param {*} deg 
+     * @param {*} lastDeg
+     * @param {*} deg
      */
     calDeg(lastDeg, deg){
         if(lastDeg !== undefined){
@@ -214,23 +214,23 @@ class Clock extends BaseComponent {
         let value = current.format(this.props.format);
 
         let close = this.props.view === 'time' ? ''
-            : (<div className='clock-close' onClick={this.close.bind(this)}>
-                <span className='fa-stack text-center'>
-                    <i className='fa fa-circle-o fa-stack-2x' />
-                    <i className='fa fa-close fa-stack-1x' />
+            : (<div className="clock-close" onClick={this.close.bind(this)}>
+                <span className="fa-stack text-center">
+                    <i className="fa fa-circle-o fa-stack-2x" />
+                    <i className="fa fa-close fa-stack-1x" />
                 </span>
             </div>);
 
         return (
-            <div className='clock-container'>
+            <div className="clock-container">
                 {close}
-                <div className='clock-face'>
-                    <div className='clock-numbers'>
+                <div className="clock-face">
+                    <div className="clock-numbers">
                         {nums}
                     </div>
                     {hands}
                 </div>
-                <div className='spinners'>
+                <div className="spinners">
                     <TimePicker
                         format={this.props.format}
                         value={value}

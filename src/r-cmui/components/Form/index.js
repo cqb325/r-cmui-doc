@@ -130,7 +130,7 @@ class Form extends BaseComponent {
                 return React.cloneElement(child, props);
             } else if (componentName === 'Promote') {
                 let props = Object.assign({
-                    labelWidth: this.props.labelWidth ? this.props.labelWidth : props.labelWidth
+                    labelWidth: this.props.labelWidth ? this.props.labelWidth : child.props.labelWidth
                 }, child.props);
                 return React.cloneElement(child, props);
             } else {
@@ -162,7 +162,7 @@ class Form extends BaseComponent {
 
     /**
      * ajax 提交数据
-     * @param {any} params 
+     * @param {any} params
      * @memberof Form
      */
     async submitData(params){

@@ -28,8 +28,6 @@ class FormControl extends BaseComponent {
     static displayName = 'FormControl';
 
     static defaultProps = {
-        rules: {},
-        messages: {},
         isFormItem: true,
         tipAlign: 'right',
         tipAuto: false,
@@ -42,8 +40,8 @@ class FormControl extends BaseComponent {
     constructor(props) {
         super(props);
 
-        this.rules = props.rules;
-        this.messages = props.messages;
+        this.rules = props.rules || {};
+        this.messages = props.messages || {};
         this._isFormItem = props.isFormItem;
         this._name = props.name;
         this._areaLabel = false;
@@ -84,7 +82,7 @@ class FormControl extends BaseComponent {
                 ref: 'formItem',
                 'data-valueType': component.valueType
             }, others);
-            let componentName = component.component && component.component.displayName ? component.component.displayName : '';
+            // let componentName = component.component && component.component.displayName ? component.component.displayName : '';
             // if (componentName === 'TextArea') {
             //     props['handleChange'] = this.handleChange;
             // } else {
@@ -452,6 +450,7 @@ class FormControl extends BaseComponent {
                 isFormItem: this.isFormItem()
             });
         }
+        console.log(this._name, this.rules);
     }
 
     /**
@@ -590,7 +589,7 @@ class FormControl extends BaseComponent {
             <div className={className} style={style}>
                 {labelEle}
                 <Tooltip theme={tipTheme} className={'error-tip'}
-                    align={this._tipAlign} ref='tooltip' title={this.state.errorTip}>
+                    align={this._tipAlign} ref="tooltip" title={this.state.errorTip}>
                     {items}
                     {customChildren}
                 </Tooltip>

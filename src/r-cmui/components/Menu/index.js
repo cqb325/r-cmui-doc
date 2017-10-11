@@ -443,7 +443,6 @@ class SubMenu extends BaseComponent{
                 openKeys[this.identify] = true;
             }
         }
-
         window.setTimeout(()=>{
             if (this._isMounted) {
                 this.setState({
@@ -463,10 +462,6 @@ class SubMenu extends BaseComponent{
         root.bindKey(this.identify, this);
 
         this.props.parent.appendChild(this);
-    }
-
-    componentWillReciveProps(nextProps){
-        console.log(nextProps);
     }
 
     render(){
@@ -496,8 +491,8 @@ class SubMenu extends BaseComponent{
                         {this.props.title}
                     </span>
                 </div>
-                <ul ref='subMenu' className={`${this.prefix}-sub ${this.prefix}`}
-                    style={{display: 'none'}}>
+                <ul ref="subMenu" className={`${this.prefix}-sub ${this.prefix}`}
+                    style={{display: this.props.open ? 'block' : 'none'}}>
                     {this.renderChildren()}
                 </ul>
             </li>
@@ -598,8 +593,8 @@ class Item extends BaseComponent{
         if (this._isMounted) {
             this.setState({active: true});
         }
-        let root = this.props.root;
-        root.lastSelect = this;
+        let parent = this.props.root;
+        parent.lastSelect = this;
 
         if (this.props.layout !== 'inline') {
             let parent = this.props.parent;

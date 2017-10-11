@@ -8,8 +8,7 @@ import classNames from 'classnames';
 import BaseComponent from '../core/BaseComponent';
 import PropTypes from 'prop-types';
 import fetch from '../utils/fetch';
-import UUID from '../utils/UUID';
-import {List, Map} from 'immutable';
+import {List} from 'immutable';
 import velocity from '../../lib/velocity';
 import './Tree.less';
 
@@ -84,7 +83,7 @@ class TreeNode extends BaseComponent{
 
     /**
      * 勾选状态
-     * @param {any} checked 
+     * @param {any} checked
      * @memberof TreeNode
      */
     setChecked(checked){
@@ -138,7 +137,7 @@ class TreeNode extends BaseComponent{
         let item = this.state.item;
         if (item.open) {
             item.open = false;
-            
+
             this.setState({
                 open: false
             }, ()=>{
@@ -192,7 +191,7 @@ class TreeNode extends BaseComponent{
 
     /**
      * 清空孩子节点
-     * @param {any} callback 
+     * @param {any} callback
      * @memberof TreeNode
      */
     clearChildren(callback){
@@ -231,8 +230,8 @@ class TreeNode extends BaseComponent{
 
     /**
      * 添加子节点
-     * @param {any} children 
-     * @param {any} callback 
+     * @param {any} children
+     * @param {any} callback
      * @memberof TreeNode
      */
     addChildren(children, callback){
@@ -414,7 +413,6 @@ class TreeSubNodes extends BaseComponent{
 
     render() {
         let items = this.state.items;
-        let visible = this.props.visible;
 
         if (this.props.parent) {
             this.props.parent._subNodes = this;
@@ -1034,7 +1032,6 @@ class Tree extends BaseComponent {
         if (typeof (item) === 'string') {
             item = this.getItem(item);
         }
-        let checkedItems = this.checkedItems;
         if (item) {
             this.removeCheckedItems(item);
             item._node.clearChildren(()=>{
@@ -1045,7 +1042,7 @@ class Tree extends BaseComponent {
 
     /**
      * 删除节点后从checkedItems中清除记录
-     * @param {any} item 
+     * @param {any} item
      * @memberof Tree
      */
     removeCheckedItems(item){
@@ -1062,8 +1059,8 @@ class Tree extends BaseComponent {
     }
 
     /**
-     * 
-     * @param {any} item 
+     *
+     * @param {any} item
      * @memberof Tree
      */
     removeCheckedItem(item){
@@ -1140,8 +1137,8 @@ class Tree extends BaseComponent {
 
     /**
      * 更新Item状态
-     * @param {any} parent 
-     * @returns 
+     * @param {any} parent
+     * @returns
      * @memberof Tree
      */
     updateItemCheckStatus(parent){
@@ -1196,7 +1193,7 @@ class Tree extends BaseComponent {
     }
 
     async loadRemoteData(){
-        let data = await fetch(this.state.url, {}, 'get', (err)=>{
+        let data = await fetch(this.state.url, {}, 'get', ()=>{
             console.log('get remote tree data error');
         });
 
