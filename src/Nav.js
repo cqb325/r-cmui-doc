@@ -3,7 +3,7 @@ import FontIcon from 'r-cmui/components/FontIcon';
 import Menu from 'r-cmui/components/Menu';
 import data from './menu';
 import store from 'store';
-const {SubMenu, MenuItemGroup} = Menu;
+const {MenuItemGroup} = Menu;
 
 class Nav extends PureComponent{
     constructor(props){
