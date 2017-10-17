@@ -10,42 +10,42 @@ import Demo3 from './demo3';
 import Demo4 from './demo4';
 import Demo5 from './demo5';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Slick 幻灯片</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Slick 幻灯片</h1>
+                <blockquote className='page-tip'>
                     一组轮播的区域。<br/>
                     用于一组图片或卡片轮播
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             {<Demo1 />}
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Slick</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Slick</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -64,9 +64,9 @@ class Page extends PureComponent{
                     {param: 'delay', desc: '特效的延迟时间', type: 'number', default: '3000'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>play()</i>
                         <span>播放</span>
@@ -76,7 +76,7 @@ class Page extends PureComponent{
                         <span>获取当前的索引</span>
                         <ul>
                             <li>
-                                return {`Number`} 当前的索引
+                                return {'Number'} 当前的索引
                             </li>
                         </ul>
                     </li>
@@ -85,16 +85,16 @@ class Page extends PureComponent{
                         <span>跳转到指定索引</span>
                         <ul>
                             <li>
-                                index {`Number`} 要跳转的索引
+                                index {'Number'} 要跳转的索引
                             </li>
                             <li>
-                                callback {`function`}  跳转完成后的回调
+                                callback {'function'}  跳转完成后的回调
                             </li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3 className="page-h3">Slick.Item</h3>
+                <h3 className='page-h3'>Slick.Item</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},

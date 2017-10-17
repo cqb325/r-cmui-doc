@@ -4,26 +4,26 @@ import FontIcon from 'r-cmui/components/FontIcon';
 import Panel from 'r-cmui/components/Panel';
 import Code from '../Code';
 
-class Demo extends BaseDemo{
-    render(){
+class Demo extends BaseDemo {
+    render () {
         return (
             <div>
-                <div className="code-box-demo">
-                    <Panel title="Panel Title">
+                <div className='code-box-demo'>
+                    <Panel title='Panel Title'>
                         <p>Panel content</p>
                         <p>Panel content</p>
                         <p>Panel content</p>
                     </Panel>
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">没有footer</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>没有footer</div>
                     <div>
                         不设置footers属性，将不显示footer。
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Panel from 'r-cmui/components/Panel';
 

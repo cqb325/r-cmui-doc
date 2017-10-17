@@ -5,26 +5,26 @@ import DateRange from 'r-cmui/components/DateRange';
 import Code from '../Code';
 import moment from 'moment';
 
-class Demo extends BaseDemo{
-    render(){
-        let end = moment();
+class Demo extends BaseDemo {
+    render () {
+        const end = moment();
         end.add(15, 'days');
-        let start = moment();
+        const start = moment();
         start.add(-2, 'month');
         return (
             <div>
-                <div className="code-box-demo">
+                <div className='code-box-demo'>
                     <DateRange maxRange={7} />
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">限制选择</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>限制选择</div>
                     <div>
                         设置 maxRange 可以限制最大选择天数。
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import DateRange from 'r-cmui/components/DateRange';
 

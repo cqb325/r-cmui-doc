@@ -10,38 +10,38 @@ import Demo3 from './demo3';
 import Demo4 from './demo4';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Spin 加载中</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Spin 加载中</h1>
+                <blockquote className='page-tip'>
                     用于页面和区块的加载中状态。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Spin.WaterSpin</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Spin.WaterSpin</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -54,22 +54,22 @@ class Page extends PureComponent{
                     {param: 'size', desc: '尺寸', type: 'number', default: '250'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getPercent()</i>
                         <span>获取百分比</span>
                         <ul>
                             <li>
-                                return {`Number`} 当前的百分比
+                                return {'Number'} 当前的百分比
                             </li>
                         </ul>
                     </li>
                 </ul>
 
 
-                <h3 className="page-h3">Spin.SVGSpin</h3>
+                <h3 className='page-h3'>Spin.SVGSpin</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -80,9 +80,9 @@ class Page extends PureComponent{
                     {param: 'spinning', desc: '是否显示spin', type: 'boolean', default: 'false'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>show()</i>
                         <span>显示Spin</span>
@@ -94,7 +94,7 @@ class Page extends PureComponent{
                 </ul>
 
 
-                <h3 className="page-h3">Spin.CssSpin</h3>
+                <h3 className='page-h3'>Spin.CssSpin</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -105,9 +105,9 @@ class Page extends PureComponent{
                     {param: 'spinning', desc: '是否显示spin', type: 'boolean', default: 'false'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>show()</i>
                         <span>显示Spin</span>

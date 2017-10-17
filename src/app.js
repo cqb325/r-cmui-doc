@@ -4,10 +4,10 @@ import Sider from 'r-cmui/components/Layout/Sider';
 import Nav from './Nav';
 const {Header, Content} = Layout;
 
-class App extends React.Component{
-    render(){
+class App extends React.Component {
+    render () {
         return (
-            <Layout className="app">
+            <Layout className='app'>
                 <Header>
                     <h3>CMUI v2.0.1</h3>
                 </Header>
@@ -16,7 +16,7 @@ class App extends React.Component{
                         <Nav/>
                     </Sider>
                     <Content>
-                        <div className="main-container">
+                        <div className='main-container'>
                             {this.props.children}
                         </div>
                     </Content>

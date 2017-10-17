@@ -6,31 +6,31 @@ import Demo1 from './demo1';
 import Demo2 from './demo2';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Panel 面板</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Panel 面板</h1>
+                <blockquote className='page-tip'>
                     通用内容容器。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Panel</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Panel</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -47,15 +47,15 @@ class Page extends PureComponent{
                     {param: 'grid', desc: 'Panel的宽度 grid={1/4}', type: 'number/object', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>setTitle(title)</i>
                         <span>设置Panel的标题</span>
                         <ul>
                             <li>
-                                title {`String`} 标题
+                                title {'String'} 标题
                             </li>
                         </ul>
                     </li>
@@ -64,7 +64,7 @@ class Page extends PureComponent{
                         <span>设置Panel的内容</span>
                         <ul>
                             <li>
-                                content {`String`} 内容
+                                content {'String'} 内容
                             </li>
                         </ul>
                     </li>
@@ -73,10 +73,10 @@ class Page extends PureComponent{
                         <span>设置Panel的标题和内容</span>
                         <ul>
                             <li>
-                                title {`String`} 标题
+                                title {'String'} 标题
                             </li>
                             <li>
-                                content {`String`} 内容
+                                content {'String'} 内容
                             </li>
                         </ul>
                     </li>

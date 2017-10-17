@@ -9,38 +9,38 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 import Demo4 from './demo4';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Form表单元素</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Form表单元素</h1>
+                <blockquote className='page-tip'>
                     表单元素<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Form</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Form</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -68,15 +68,15 @@ class Page extends PureComponent{
                     {param: 'encType', desc: '表单有上传文件时的encType', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getFormParams()</i>
                         <span>获取表单的数据 key/value形式</span>
                         <ul>
                             <li>
-                                return {`Object`} key/value 表单数据
+                                return {'Object'} key/value 表单数据
                             </li>
                         </ul>
                     </li>
@@ -85,7 +85,7 @@ class Page extends PureComponent{
                         <span>获取表单的Items</span>
                         <ul>
                             <li>
-                                return {`Array`} FormControl元素数组
+                                return {'Array'} FormControl元素数组
                             </li>
                         </ul>
                     </li>
@@ -98,10 +98,10 @@ class Page extends PureComponent{
                         <span>根据name获取Form表单元素</span>
                         <ul>
                             <li>
-                                name {`String`} 元素的name
+                                name {'String'} 元素的name
                             </li>
                             <li>
-                                return {`Object`} Input、TextArea等元素
+                                return {'Object'} Input、TextArea等元素
                             </li>
                         </ul>
                     </li>
@@ -110,10 +110,10 @@ class Page extends PureComponent{
                         <span>根据name获取Form表单元素</span>
                         <ul>
                             <li>
-                                name {`String`} 元素的name
+                                name {'String'} 元素的name
                             </li>
                             <li>
-                                return {`Object`} FormControl元素
+                                return {'Object'} FormControl元素
                             </li>
                         </ul>
                     </li>
@@ -122,14 +122,14 @@ class Page extends PureComponent{
                         <span>获取表单验证是否通过</span>
                         <ul>
                             <li>
-                                return {`Boolean`} true/false
+                                return {'Boolean'} true/false
                             </li>
                         </ul>
                     </li>
                 </ul>
 
 
-                <h3 className="page-h3">FormControl</h3>
+                <h3 className='page-h3'>FormControl</h3>
                 <Table columns={[
                     {name: 'param', text: '参数'},
                     {name: 'desc', text: '说明'},
@@ -153,17 +153,17 @@ class Page extends PureComponent{
                     {param: 'onValid', desc: '验证后的回调', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
-                <ul className="code-methods">
+                <h3 className='page-h3'>Methods</h3>
+                <ul className='code-methods'>
                     <li>
                         <i>setMessage(rule, message)</i>
                         <span>动态设置验证提示消息</span>
                         <ul>
                             <li>
-                                rule {`String`} 规则名称
+                                rule {'String'} 规则名称
                             </li>
                             <li>
-                                message {`String`} 规则对应的提示信息
+                                message {'String'} 规则对应的提示信息
                             </li>
                         </ul>
                     </li>
@@ -172,10 +172,10 @@ class Page extends PureComponent{
                         <span>动态设置验证规则</span>
                         <ul>
                             <li>
-                                rule {`String`} 规则名称
+                                rule {'String'} 规则名称
                             </li>
                             <li>
-                                rule_args {`any`} 规则参数
+                                rule_args {'any'} 规则参数
                             </li>
                         </ul>
                     </li>
@@ -184,7 +184,7 @@ class Page extends PureComponent{
                         <span>设置错误信息</span>
                         <ul>
                             <li>
-                                msg {`String`} 错误提示信息
+                                msg {'String'} 错误提示信息
                             </li>
                         </ul>
                     </li>
@@ -193,7 +193,7 @@ class Page extends PureComponent{
                         <span>是否为表单元素</span>
                         <ul>
                             <li>
-                                return {`boolean`} true/false
+                                return {'boolean'} true/false
                             </li>
                         </ul>
                     </li>
@@ -202,7 +202,7 @@ class Page extends PureComponent{
                         <span>获取表单名称</span>
                         <ul>
                             <li>
-                                return {`String`} 表单名称
+                                return {'String'} 表单名称
                             </li>
                         </ul>
                     </li>
@@ -211,7 +211,7 @@ class Page extends PureComponent{
                         <span>设置元素的值</span>
                         <ul>
                             <li>
-                                value {`any`} 表单元素的值
+                                value {'any'} 表单元素的值
                             </li>
                         </ul>
                     </li>
@@ -220,7 +220,7 @@ class Page extends PureComponent{
                         <span>获取元素的值</span>
                         <ul>
                             <li>
-                                return {`any`} 字段的值
+                                return {'any'} 字段的值
                             </li>
                         </ul>
                     </li>
@@ -229,7 +229,7 @@ class Page extends PureComponent{
                         <span>获取元素验证是否通过</span>
                         <ul>
                             <li>
-                                return {`boolean`} 元素是否验证通过
+                                return {'boolean'} 元素是否验证通过
                             </li>
                         </ul>
                     </li>
@@ -238,7 +238,7 @@ class Page extends PureComponent{
                         <span>获取子元素Input或TextArea等注册的元素</span>
                         <ul>
                             <li>
-                                return {`ReactElement`} 子元素对象
+                                return {'ReactElement'} 子元素对象
                             </li>
                         </ul>
                     </li>
@@ -247,7 +247,7 @@ class Page extends PureComponent{
                         <span>验证元素</span>
                         <ul>
                             <li>
-                                return {`boolean`} true/false
+                                return {'boolean'} true/false
                             </li>
                         </ul>
                     </li>

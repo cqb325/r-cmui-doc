@@ -7,43 +7,43 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 import Demo4 from './demo4';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Menu 菜单</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Menu 菜单</h1>
+                <blockquote className='page-tip'>
                     为页面和功能提供导航的菜单列表。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label grid={1} className="code-col">
-                    <Label className="code-box">
+                <Label grid={1} className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label grid={1} className="code-col">
-                    <Label className="code-box">
+                <Label grid={1} className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <Label grid={1} className="code-col">
-                    <Label className="code-box">
+                <Label grid={1} className='code-col'>
+                    <Label className='code-box'>
                         <Demo3></Demo3>
                     </Label>
                 </Label>
 
-                <Label grid={1} className="code-col">
-                    <Label className="code-box">
+                <Label grid={1} className='code-col'>
+                    <Label className='code-box'>
                         <Demo4></Demo4>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Menu</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Menu</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -63,15 +63,15 @@ class Page extends PureComponent{
                     {param: 'onOpen', desc: '菜单打开回调', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>selectItem(key)</i>
                         <span>选中菜单项</span>
                         <ul>
                             <li>
-                                key {`String`} 菜单项的唯一key值
+                                key {'String'} 菜单项的唯一key值
                             </li>
                         </ul>
                     </li>
@@ -80,10 +80,10 @@ class Page extends PureComponent{
                         <span>折叠或展开</span>
                         <ul>
                             <li>
-                                key {`String`} 菜单项的唯一key值
+                                key {'String'} 菜单项的唯一key值
                             </li>
                             <li>
-                                collapsed {`Boolean`} true折叠false打开
+                                collapsed {'Boolean'} true折叠false打开
                             </li>
                         </ul>
                     </li>
@@ -92,7 +92,7 @@ class Page extends PureComponent{
                         <span>设置主题</span>
                         <ul>
                             <li>
-                                theme {`String`} 菜单主题
+                                theme {'String'} 菜单主题
                             </li>
                         </ul>
                     </li>
@@ -102,13 +102,13 @@ class Page extends PureComponent{
                         <span>当前的选择模式</span>
                         <ul>
                             <li>
-                                return {`String`} 获取模式 single、multi
+                                return {'String'} 获取模式 single、multi
                             </li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3 className="page-h3">Menu.SubMenu</h3>
+                <h3 className='page-h3'>Menu.SubMenu</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -124,15 +124,15 @@ class Page extends PureComponent{
                 ]}></Table>
 
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>collapse(collapsed)</i>
                         <span>折叠或打开</span>
                         <ul>
                             <li>
-                                collapsed {`Boolean`} true折叠false打开
+                                collapsed {'Boolean'} true折叠false打开
                             </li>
                         </ul>
                     </li>
@@ -141,13 +141,13 @@ class Page extends PureComponent{
                         <span>是否打开的状态</span>
                         <ul>
                             <li>
-                                return {`Boolean`} true折叠false打开
+                                return {'Boolean'} true折叠false打开
                             </li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3 className="page-h3">Menu.MenuItemGroup</h3>
+                <h3 className='page-h3'>Menu.MenuItemGroup</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -158,7 +158,7 @@ class Page extends PureComponent{
                     {param: 'title', desc: '标题', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Menu.Item</h3>
+                <h3 className='page-h3'>Menu.Item</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -175,15 +175,15 @@ class Page extends PureComponent{
                     {param: 'link', desc: '链接地址', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getKey()</i>
                         <span>获取菜单项的Key</span>
                         <ul>
                             <li>
-                                return {`String`} 菜单项的Key
+                                return {'String'} 菜单项的Key
                             </li>
                         </ul>
                     </li>

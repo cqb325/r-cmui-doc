@@ -11,45 +11,44 @@ import Demo6 from './demo6';
 import Demo7 from './demo7';
 
 class Page extends PureComponent {
-
-    render(){
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">CheckBox 复选框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>CheckBox 复选框</h1>
+                <blockquote className='page-tip'>
                     多选框。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo3></Demo3>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo5></Demo5>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo7/>
                     </Label>
                 </Label>
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo4></Demo4>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo6></Demo6>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">CheckBox</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>CheckBox</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -68,7 +67,7 @@ class Page extends PureComponent {
                     {param: 'onChange', desc: '勾选变化后触发', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">CheckBoxGroup</h3>
+                <h3 className='page-h3'>CheckBoxGroup</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -89,15 +88,15 @@ class Page extends PureComponent {
                     {param: 'onChange', desc: '勾选变化后触发', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getValue()</i>
                         <span>获取当前选中的值</span>
                         <ul>
                             <li>
-                                return {`String`} 选中的值以逗号隔开
+                                return {'String'} 选中的值以逗号隔开
                             </li>
                         </ul>
                     </li>
@@ -106,7 +105,7 @@ class Page extends PureComponent {
                         <span>设置选中的值</span>
                         <ul>
                             <li>
-                                value {`String`} 要设置的值以逗号隔开
+                                value {'String'} 要设置的值以逗号隔开
                             </li>
                         </ul>
                     </li>

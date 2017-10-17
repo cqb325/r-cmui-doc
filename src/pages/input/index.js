@@ -5,31 +5,31 @@ import Table from 'r-cmui/components/Table';
 import Demo1 from './demo1';
 import Demo2 from './demo2';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Input 输入框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Input 输入框</h1>
+                <blockquote className='page-tip'>
                     输入框。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Input</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Input</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -45,17 +45,17 @@ class Page extends PureComponent{
                     {param: 'onChange', desc: '值变化触发 时机同trigger', type: 'function', default: ''},
                     {param: 'grid', desc: '定义Input的长度如：grid={1/4}', type: 'number/object', default: ''}
                 ]}></Table>
-                <div className="mt-5">其他属性同html的input标签</div>
+                <div className='mt-5'>其他属性同html的input标签</div>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getValue()</i>
                         <span>当前的值</span>
                         <ul>
                             <li>
-                                return {`String`} Input的值
+                                return {'String'} Input的值
                             </li>
                         </ul>
                     </li>
@@ -64,7 +64,7 @@ class Page extends PureComponent{
                         <span>设置当前的值</span>
                         <ul>
                             <li>
-                                value {`String`} Input的值
+                                value {'String'} Input的值
                             </li>
                         </ul>
                     </li>

@@ -13,56 +13,56 @@ import Demo6 from './demo6';
 import Demo7 from './demo7';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">InputNumber 数字框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>InputNumber 数字框</h1>
+                <blockquote className='page-tip'>
                     数字框。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
                     <Col grid={0.5}>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo1></Demo1>
                             </Label>
                         </Label>
 
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo3></Demo3>
                             </Label>
                         </Label>
 
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo5></Demo5>
                             </Label>
                         </Label>
 
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo7></Demo7>
                             </Label>
                         </Label>
                     </Col>
                     <Col grid={0.5}>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo2></Demo2>
                             </Label>
                         </Label>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo4></Demo4>
                             </Label>
                         </Label>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo6></Demo6>
                             </Label>
                         </Label>
@@ -70,8 +70,8 @@ class Page extends PureComponent{
                 </Row>
 
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">InputNumber</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>InputNumber</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -91,12 +91,12 @@ class Page extends PureComponent{
                     {param: 'parser', desc: '解析函数', type: 'function', default: ''},
                     {param: 'itemClassName', desc: 'input上的class', type: 'string', default: ''},
                     {param: 'size', desc: '大小支持large和small', type: 'string', default: ''},
-                    {param: 'name', desc: '作为表单元素的name', type: 'string', default: ''},
+                    {param: 'name', desc: '作为表单元素的name', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>disable()</i>
                         <span>禁用</span>
@@ -110,7 +110,7 @@ class Page extends PureComponent{
                         <span>设置最小值</span>
                         <ul>
                             <li>
-                                min {`Number`} 最小值
+                                min {'Number'} 最小值
                             </li>
                         </ul>
                     </li>
@@ -119,7 +119,7 @@ class Page extends PureComponent{
                         <span>设置最大值</span>
                         <ul>
                             <li>
-                                max {`Number`} 最大值
+                                max {'Number'} 最大值
                             </li>
                         </ul>
                     </li>
@@ -128,7 +128,7 @@ class Page extends PureComponent{
                         <span>重新设置步长</span>
                         <ul>
                             <li>
-                                step {`Number`} 步长值
+                                step {'Number'} 步长值
                             </li>
                         </ul>
                     </li>
@@ -137,7 +137,7 @@ class Page extends PureComponent{
                         <span>设置值</span>
                         <ul>
                             <li>
-                                value {`Number`} 当前值
+                                value {'Number'} 当前值
                             </li>
                         </ul>
                     </li>
@@ -146,7 +146,7 @@ class Page extends PureComponent{
                         <span>获取格式化值</span>
                         <ul>
                             <li>
-                                return {`String`} 当前格式化后的值
+                                return {'String'} 当前格式化后的值
                             </li>
                         </ul>
                     </li>
@@ -155,7 +155,7 @@ class Page extends PureComponent{
                         <span>获取值</span>
                         <ul>
                             <li>
-                                return {`String`} 当前值
+                                return {'String'} 当前值
                             </li>
                         </ul>
                     </li>

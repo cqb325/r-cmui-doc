@@ -9,33 +9,33 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Accordion 折叠面板</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Accordion 折叠面板</h1>
+                <blockquote className='page-tip'>
                     可以折叠/展开的内容区域。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={1} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={1} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Button</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Button</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -53,9 +53,9 @@ class Page extends PureComponent{
                     {param: 'bordered', desc: '是否添加边框', type: 'boolean', default: 'false'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>activeByIndex(index)</i>
                         <span>根据index索引展开</span>
@@ -70,7 +70,7 @@ class Page extends PureComponent{
                         <span>根据item对象或item的key值打开面板</span>
                         <ul>
                             <li>
-                                item {String/Object} item对象或item的key值
+                                item {String / Object} item对象或item的key值
                             </li>
                         </ul>
                     </li>

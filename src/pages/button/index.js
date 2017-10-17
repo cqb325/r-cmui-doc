@@ -11,44 +11,44 @@ import Demo4 from './demo4';
 import Demo5 from './demo5';
 import Demo6 from './demo6';
 
-class Page extends PureComponent{
-    render(){
-        return(
-            <div className="main-container">
-                <h1 className="page-h1">Button 按钮</h1>
-                <blockquote className="page-tip">
+class Page extends PureComponent {
+    render () {
+        return (
+            <div className='main-container'>
+                <h1 className='page-h1'>Button 按钮</h1>
+                <blockquote className='page-tip'>
                     按钮用于开始一个即时操作。响应用户点击行为，触发相应的业务逻辑。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo6 />
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Button</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Button</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -71,9 +71,9 @@ class Page extends PureComponent{
                     {param: 'onClick', desc: '点击后触发', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>disable()</i>
                         <span>禁用</span>
@@ -87,7 +87,7 @@ class Page extends PureComponent{
                         <span>设置按钮的文字</span>
                         <ul>
                             <li>
-                                text {`String`} 要设置的按钮文字
+                                text {'String'} 要设置的按钮文字
                             </li>
                         </ul>
                     </li>
@@ -96,7 +96,7 @@ class Page extends PureComponent{
                         <span>获取激活状态</span>
                         <ul>
                             <li>
-                                return {`Boolean`} true 激活 其他为失活
+                                return {'Boolean'} true 激活 其他为失活
                             </li>
                         </ul>
                     </li>
@@ -105,7 +105,7 @@ class Page extends PureComponent{
                         <span>设置激活状态 在ButtonGroup中使用</span>
                         <ul>
                             <li>
-                                active {`Boolean`} true激活 false 失活
+                                active {'Boolean'} true激活 false 失活
                             </li>
                         </ul>
                     </li>

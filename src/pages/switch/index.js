@@ -10,41 +10,40 @@ import Demo5 from './demo5';
 
 
 class Page extends PureComponent {
-
-    render(){
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Switch 开关</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Switch 开关</h1>
+                <blockquote className='page-tip'>
                     开关选择器。<br/>
                     需要表示开关状态/两种状态之间的切换时使用。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo1 />
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo3 />
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo5 />
                     </Label>
                 </Label>
 
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo2 />
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo4 />
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Switch</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Switch</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -63,9 +62,9 @@ class Page extends PureComponent {
                     {param: 'name', desc: '作为form表单元素的name', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>toggleSwitch()</i>
                         <span>改变Switch的状态</span>

@@ -5,41 +5,40 @@ import Code from '../Code';
 import Select from 'r-cmui/components/Select';
 import DISTRICT_DATA from './all_district';
 
-class Demo extends BaseDemo{
-
-    selectProvince(value, item){
+class Demo extends BaseDemo {
+    selectProvince (value, item) {
         console.log(value, item);
-        if(item) {
+        if (item) {
             this.refs.city.setData(item.children);
             this.refs.district.setData([]);
         }
     }
 
-    selectCity(value, item){
-        if(item) {
+    selectCity (value, item) {
+        if (item) {
             this.refs.district.setData(item.children);
         }
     }
 
-    render(){
+    render () {
         return (
             <div>
-                <div className="code-box-demo">
-                    <Select data={DISTRICT_DATA} placeholder="省份" hasEmptyOption ref="province" onChange={this.selectProvince.bind(this)}></Select>
-                    <span className="mr-10"></span>
-                    <Select ref="city" placeholder="城市" onChange={this.selectCity.bind(this)}></Select>
-                    <span className="mr-10"></span>
-                    <Select ref="district" placeholder="区县"></Select>
+                <div className='code-box-demo'>
+                    <Select data={DISTRICT_DATA} placeholder='省份' hasEmptyOption ref='province' onChange={this.selectProvince.bind(this)}></Select>
+                    <span className='mr-10'></span>
+                    <Select ref='city' placeholder='城市' onChange={this.selectCity.bind(this)}></Select>
+                    <span className='mr-10'></span>
+                    <Select ref='district' placeholder='区县'></Select>
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">多选</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>多选</div>
                     <div>
                         多选选择框,设置multi为true， sep属性可以设置多值之间的分隔符
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Select from 'r-cmui/components/Select';
 import DISTRICT_DATA from "./all_district";

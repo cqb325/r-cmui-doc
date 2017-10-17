@@ -5,39 +5,39 @@ import data from './menu';
 import store from 'store';
 const {MenuItemGroup} = Menu;
 
-class Nav extends PureComponent{
-    constructor(props){
+class Nav extends PureComponent {
+    constructor (props) {
         super(props);
 
         this.menuIndex = 0;
     }
 
-    gotoPage(item){
+    gotoPage (item) {
         window.location.hash = item.props.href;
         store.set('cmui-lastSelectKey', item.getKey());
     }
 
-    componentDidMount(){
-        let key = store.get('cmui-lastSelectKey');
-        if(key) {
-            window.setTimeout(()=>{
+    componentDidMount () {
+        const key = store.get('cmui-lastSelectKey');
+        if (key) {
+            window.setTimeout(() => {
                 this.refs.menu.selectItem(key);
             }, 10);
-        }else{
+        } else {
             this.refs.menu.selectItem('dashboard');
         }
     }
 
-    renderMenu(){
-        return data.data.map((menuItem)=>{
+    renderMenu () {
+        return data.data.map((menuItem) => {
             this.menuIndex ++;
-            if(menuItem.link){
-                let icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
+            if (menuItem.link) {
+                const icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
                 return <Menu.Item key={this.menuIndex} identify={menuItem.identify} href={menuItem.link}>
                     {icon}{menuItem.text}
                 </Menu.Item>;
-            }else{
-                return <MenuItemGroup key={this.menuIndex} title={menuItem.icon? <span><FontIcon icon={menuItem.icon}></FontIcon>{menuItem.text}</span>
+            } else {
+                return <MenuItemGroup key={this.menuIndex} title={menuItem.icon ? <span><FontIcon icon={menuItem.icon}></FontIcon>{menuItem.text}</span>
                     : menuItem.text
                 }>
                     {this.renderSubMenu(menuItem.children)}
@@ -46,15 +46,15 @@ class Nav extends PureComponent{
         });
     }
 
-    renderSubMenu(subMenus){
-        return subMenus.map((menuItem)=>{
+    renderSubMenu (subMenus) {
+        return subMenus.map((menuItem) => {
             this.menuIndex ++;
-            if(menuItem.link){
-                let icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
+            if (menuItem.link) {
+                const icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
                 return <Menu.Item key={this.menuIndex} identify={menuItem.identify} href={menuItem.link}>
                     {icon}{menuItem.text}
                 </Menu.Item>;
-            }else{
+            } else {
                 return <MenuItemGroup key={this.menuIndex} title={menuItem.text}>
                     {this.renderMenuItemGroup(menuItem.children)}
                 </MenuItemGroup>;
@@ -62,23 +62,23 @@ class Nav extends PureComponent{
         });
     }
 
-    renderMenuItemGroup(subMenus){
-        return subMenus.map((menuItem)=>{
+    renderMenuItemGroup (subMenus) {
+        return subMenus.map((menuItem) => {
             this.menuIndex ++;
-            if(menuItem.link){
-                let icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
+            if (menuItem.link) {
+                const icon = menuItem.icon ? <FontIcon icon={menuItem.icon} style={{marginRight: '8px'}}></FontIcon> : null;
                 return <Menu.Item key={this.menuIndex} identify={menuItem.identify} href={menuItem.link}>
                     {icon}{menuItem.text}
                 </Menu.Item>;
-            }else{
+            } else {
                 return null;
             }
         });
     }
 
-    render(){
+    render () {
         return (
-            <Menu ref="menu" style={{width: 200}} startIndex={2} theme="light" onSelect={this.gotoPage.bind(this)}>
+            <Menu ref='menu' style={{width: 200}} startIndex={2} theme='light' onSelect={this.gotoPage.bind(this)}>
                 {this.renderMenu()}
             </Menu>
         );

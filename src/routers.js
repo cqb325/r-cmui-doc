@@ -37,13 +37,13 @@ const PageList = resolve => require(['./pages/pagelist/index'], resolve);
 const SimpleForm = resolve => require(['./pages/simpleform/index'], resolve);
 const TableForm = resolve => require(['./pages/tableform/index'], resolve);
 
-let routers = {
+const routers = {
     path: '/',
     component: App,
     childRoutes: [
         {
             path: 'Button',
-            getComponent: (next, cb)=>{
+            getComponent: (next, cb) => {
                 require.ensure([], require => {
                     cb(null, require('./pages/button/index').default);
                 });
@@ -51,7 +51,7 @@ let routers = {
         },
         {
             path: 'CheckBox',
-            getComponent: (next, cb)=>{
+            getComponent: (next, cb) => {
                 require.ensure([], require => {
                     cb(null, require('./pages/checkbox/index').default);
                 });
@@ -59,44 +59,44 @@ let routers = {
         },
         {
             path: 'Radio',
-            getComponent: (next, cb)=>{
-                Radio((a)=>{
+            getComponent: (next, cb) => {
+                Radio((a) => {
                     cb(null, a.default);
                 });
             }
         },
-        {path: 'Icon', getComponent: (next, cb)=>{Icon((a)=>{cb(null, a.default);});}},
-        {path: 'Grid', getComponent: (next, cb)=>{Grid((a)=>{cb(null, a.default);});}},
-        {path: 'Layout', getComponent: (next, cb)=>{Layout((a)=>{cb(null, a.default);});}},
-        {path: 'Breadcrumb', getComponent: (next, cb)=>{Breadcrumb((a)=>{cb(null, a.default);});}},
-        {path: 'DateTime', getComponent: (next, cb)=>{DateTime((a)=>{cb(null, a.default);});}},
-        {path: 'DateRange', getComponent: (next, cb)=>{DateRange((a)=>{cb(null, a.default);});}},
-        {path: 'Pagination', getComponent: (next, cb)=>{Pagination((a)=>{cb(null, a.default);});}},
-        {path: 'Input', getComponent: (next, cb)=>{Input((a)=>{cb(null, a.default);});}},
-        {path: 'Form', getComponent: (next, cb)=>{Form((a)=>{cb(null, a.default);});}},
-        {path: 'Steps', getComponent: (next, cb)=>{Steps((a)=>{cb(null, a.default);});}},
-        {path: 'Switch', getComponent: (next, cb)=>{Switch((a)=>{cb(null, a.default);});}},
-        {path: 'Card', getComponent: (next, cb)=>{Card((a)=>{cb(null, a.default);});}},
-        {path: 'Panel', getComponent: (next, cb)=>{Panel((a)=>{cb(null, a.default);});}},
-        {path: 'Tooltip', getComponent: (next, cb)=>{Tooltip((a)=>{cb(null, a.default);});}},
-        {path: 'MessageBox', getComponent: (next, cb)=>{MessageBox((a)=>{cb(null, a.default);});}},
-        {path: 'Dialog', getComponent: (next, cb)=>{Dialog((a)=>{cb(null, a.default);});}},
-        {path: 'Menu', getComponent: (next, cb)=>{Menu((a)=>{cb(null, a.default);});}},
-        {path: 'Tree', getComponent: (next, cb)=>{Tree((a)=>{cb(null, a.default);});}},
-        {path: 'Select', getComponent: (next, cb)=>{Select((a)=>{cb(null, a.default);});}},
-        {path: 'Table', getComponent: (next, cb)=>{Table((a)=>{cb(null, a.default);});}},
-        {path: 'Progress', getComponent: (next, cb)=>{Progress((a)=>{cb(null, a.default);});}},
-        {path: 'Slick', getComponent: (next, cb)=>{Slick((a)=>{cb(null, a.default);});}},
-        {path: 'Spin', getComponent: (next, cb)=>{Spin((a)=>{cb(null, a.default);});}},
-        {path: 'Uploadify', getComponent: (next, cb)=>{Uploadify((a)=>{cb(null, a.default);});}},
-        {path: 'Badge', getComponent: (next, cb)=>{Badge((a)=>{cb(null, a.default);});}},
-        {path: 'Dropdown', getComponent: (next, cb)=>{Dropdown((a)=>{cb(null, a.default);});}},
-        {path: 'Accordion', getComponent: (next, cb)=>{Accordion((a)=>{cb(null, a.default);});}},
-        {path: 'InputNumber', getComponent: (next, cb)=>{InputNumber((a)=>{cb(null, a.default);});}},
-        {path: 'Notification', getComponent: (next, cb)=>{Notification((a)=>{cb(null, a.default);});}},
-        {path: 'PageList', getComponent: (next, cb)=>{PageList((a)=>{cb(null, a.default);});}},
-        {path: 'SimpleForm', getComponent: (next, cb)=>{SimpleForm((a)=>{cb(null, a.default);});}},
-        {path: 'TableForm', getComponent: (next, cb)=>{TableForm((a)=>{cb(null, a.default);});}},
+        {path: 'Icon', getComponent: (next, cb) => { Icon((a) => { cb(null, a.default); }); }},
+        {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }},
+        {path: 'Layout', getComponent: (next, cb) => { Layout((a) => { cb(null, a.default); }); }},
+        {path: 'Breadcrumb', getComponent: (next, cb) => { Breadcrumb((a) => { cb(null, a.default); }); }},
+        {path: 'DateTime', getComponent: (next, cb) => { DateTime((a) => { cb(null, a.default); }); }},
+        {path: 'DateRange', getComponent: (next, cb) => { DateRange((a) => { cb(null, a.default); }); }},
+        {path: 'Pagination', getComponent: (next, cb) => { Pagination((a) => { cb(null, a.default); }); }},
+        {path: 'Input', getComponent: (next, cb) => { Input((a) => { cb(null, a.default); }); }},
+        {path: 'Form', getComponent: (next, cb) => { Form((a) => { cb(null, a.default); }); }},
+        {path: 'Steps', getComponent: (next, cb) => { Steps((a) => { cb(null, a.default); }); }},
+        {path: 'Switch', getComponent: (next, cb) => { Switch((a) => { cb(null, a.default); }); }},
+        {path: 'Card', getComponent: (next, cb) => { Card((a) => { cb(null, a.default); }); }},
+        {path: 'Panel', getComponent: (next, cb) => { Panel((a) => { cb(null, a.default); }); }},
+        {path: 'Tooltip', getComponent: (next, cb) => { Tooltip((a) => { cb(null, a.default); }); }},
+        {path: 'MessageBox', getComponent: (next, cb) => { MessageBox((a) => { cb(null, a.default); }); }},
+        {path: 'Dialog', getComponent: (next, cb) => { Dialog((a) => { cb(null, a.default); }); }},
+        {path: 'Menu', getComponent: (next, cb) => { Menu((a) => { cb(null, a.default); }); }},
+        {path: 'Tree', getComponent: (next, cb) => { Tree((a) => { cb(null, a.default); }); }},
+        {path: 'Select', getComponent: (next, cb) => { Select((a) => { cb(null, a.default); }); }},
+        {path: 'Table', getComponent: (next, cb) => { Table((a) => { cb(null, a.default); }); }},
+        {path: 'Progress', getComponent: (next, cb) => { Progress((a) => { cb(null, a.default); }); }},
+        {path: 'Slick', getComponent: (next, cb) => { Slick((a) => { cb(null, a.default); }); }},
+        {path: 'Spin', getComponent: (next, cb) => { Spin((a) => { cb(null, a.default); }); }},
+        {path: 'Uploadify', getComponent: (next, cb) => { Uploadify((a) => { cb(null, a.default); }); }},
+        {path: 'Badge', getComponent: (next, cb) => { Badge((a) => { cb(null, a.default); }); }},
+        {path: 'Dropdown', getComponent: (next, cb) => { Dropdown((a) => { cb(null, a.default); }); }},
+        {path: 'Accordion', getComponent: (next, cb) => { Accordion((a) => { cb(null, a.default); }); }},
+        {path: 'InputNumber', getComponent: (next, cb) => { InputNumber((a) => { cb(null, a.default); }); }},
+        {path: 'Notification', getComponent: (next, cb) => { Notification((a) => { cb(null, a.default); }); }},
+        {path: 'PageList', getComponent: (next, cb) => { PageList((a) => { cb(null, a.default); }); }},
+        {path: 'SimpleForm', getComponent: (next, cb) => { SimpleForm((a) => { cb(null, a.default); }); }},
+        {path: 'TableForm', getComponent: (next, cb) => { TableForm((a) => { cb(null, a.default); }); }}
     ]
 };
 

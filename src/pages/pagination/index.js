@@ -8,44 +8,43 @@ import Demo3 from './demo3';
 import Demo4 from './demo4';
 
 
-class Page extends PureComponent{
-
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Pagination 分页</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Pagination 分页</h1>
+                <blockquote className='page-tip'>
                     分页显示数据或者内容时使用。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo3></Demo3>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo4></Demo4>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Pagination</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Pagination</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -64,15 +63,15 @@ class Page extends PureComponent{
                     {param: 'shape', desc: '页号的形状 目前只有circle', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>update(data)</i>
                         <span>更新组件状态</span>
                         <ul>
                             <li>
-                                data {`Object`} 包含pageSize、total、current信息的json对象
+                                data {'Object'} 包含pageSize、total、current信息的json对象
                             </li>
                         </ul>
                     </li>

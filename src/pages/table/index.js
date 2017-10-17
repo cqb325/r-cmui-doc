@@ -6,29 +6,29 @@ import Demo1 from './demo1';
 import Demo2 from './demo2';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Table 表格</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Table 表格</h1>
+                <blockquote className='page-tip'>
                     表格。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
 
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo2 />
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Table</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Table</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -45,15 +45,15 @@ class Page extends PureComponent{
                     {param: 'hover', desc: '鼠标滑过高亮', type: 'boolean', default: 'false'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>setData(data)</i>
                         <span>设置表格数据</span>
                         <ul>
                             <li>
-                                data {`Array`} 表格数据
+                                data {'Array'} 表格数据
                             </li>
                         </ul>
                     </li>
@@ -62,7 +62,7 @@ class Page extends PureComponent{
                         <span>获取表格数据</span>
                         <ul>
                             <li>
-                                return {`Array`} 表格数据
+                                return {'Array'} 表格数据
                             </li>
                         </ul>
                     </li>
@@ -71,7 +71,7 @@ class Page extends PureComponent{
                         <span>添加行数据</span>
                         <ul>
                             <li>
-                                row {`Object`} 对应columns字段定义的json数据
+                                row {'Object'} 对应columns字段定义的json数据
                             </li>
                         </ul>
                     </li>
@@ -80,7 +80,7 @@ class Page extends PureComponent{
                         <span>删除行</span>
                         <ul>
                             <li>
-                                index {`Number`} 行号
+                                index {'Number'} 行号
                             </li>
                         </ul>
                     </li>
@@ -89,10 +89,10 @@ class Page extends PureComponent{
                         <span>删除行，根据字段和值进行匹配，删除匹配的数据</span>
                         <ul>
                             <li>
-                                field {`String`} 字段名称
+                                field {'String'} 字段名称
                             </li>
                             <li>
-                                value {`String`} 对应的值
+                                value {'String'} 对应的值
                             </li>
                         </ul>
                     </li>
@@ -101,7 +101,7 @@ class Page extends PureComponent{
                         <span>重置数据</span>
                         <ul>
                             <li>
-                                data {`Object {columns: [], data: []}`} 包含columns内容和表格数据的data
+                                data {'Object {columns: [], data: []}'} 包含columns内容和表格数据的data
                             </li>
                         </ul>
                     </li>
@@ -110,7 +110,7 @@ class Page extends PureComponent{
                         <span>勾选所有或取消勾选所有</span>
                         <ul>
                             <li>
-                                checked {`Boolean`} 如果是一个带有checkbox的列可以使用
+                                checked {'Boolean'} 如果是一个带有checkbox的列可以使用
                             </li>
                         </ul>
                     </li>
@@ -119,10 +119,10 @@ class Page extends PureComponent{
                         <span>根据属性勾选行</span>
                         <ul>
                             <li>
-                                field {`String`} 字段名称
+                                field {'String'} 字段名称
                             </li>
                             <li>
-                                value {`String`} 对应的值
+                                value {'String'} 对应的值
                             </li>
                         </ul>
                     </li>
@@ -131,10 +131,10 @@ class Page extends PureComponent{
                         <span>根据属性取消勾选行</span>
                         <ul>
                             <li>
-                                field {`String`} 字段名称
+                                field {'String'} 字段名称
                             </li>
                             <li>
-                                value {`String`} 对应的值
+                                value {'String'} 对应的值
                             </li>
                         </ul>
                     </li>
@@ -143,34 +143,34 @@ class Page extends PureComponent{
                         <span>获取所有勾选的数据</span>
                         <ul>
                             <li>
-                                return {`Object {data: [], rows: []}`} 勾选的数据
+                                return {'Object {data: [], rows: []}'} 勾选的数据
                             </li>
                         </ul>
                     </li>
                 </ul>
 
 
-                <h3 className="page-h3">Columns</h3>
+                <h3 className='page-h3'>Columns</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
-                        <i>{`[{name: "", type: "", text: "", tip: "", format: ""}]`}</i>
+                        <i>{'[{name: "", type: "", text: "", tip: "", format: ""}]'}</i>
                         <span>表头格式</span>
                         <ul>
                             <li>
-                                name {`String`} 字段名称
+                                name {'String'} 字段名称
                             </li>
                             <li>
-                                type {`String`} 为checkbox是为选择框列 为index是序号列
+                                type {'String'} 为checkbox是为选择框列 为index是序号列
                             </li>
                             <li>
-                                text {`String`} 表头字符串
+                                text {'String'} 表头字符串
                             </li>
                             <li>
-                                tip {`Boolean`} 是否鼠标滑过提示
+                                tip {'Boolean'} 是否鼠标滑过提示
                             </li>
                             <li>
-                                format {`function`} 字段格式化 format(value, column, row)
+                                format {'function'} 字段格式化 format(value, column, row)
                             </li>
                         </ul>
                     </li>

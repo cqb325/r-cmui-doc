@@ -11,44 +11,44 @@ import Demo4 from './demo4';
 import Demo5 from './demo5';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Select 选择器</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Select 选择器</h1>
+                <blockquote className='page-tip'>
                     弹出一个下拉菜单给用户选择操作，用于代替原生的选择器。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
                     </Col>
 
-                    <Col grid={1} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={1} className='code-col'>
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Select</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Select</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -74,15 +74,15 @@ class Page extends PureComponent{
                 ]}></Table>
 
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getValue()</i>
                         <span>获取当前值</span>
                         <ul>
                             <li>
-                                return {`String`} 选中的值，多选的话值用sep指定的符号分割
+                                return {'String'} 选中的值，多选的话值用sep指定的符号分割
                             </li>
                         </ul>
                     </li>
@@ -91,7 +91,7 @@ class Page extends PureComponent{
                         <span>设置Select的值</span>
                         <ul>
                             <li>
-                                value {`String`} 值，多选的话值用sep指定的符号分割
+                                value {'String'} 值，多选的话值用sep指定的符号分割
                             </li>
                         </ul>
                     </li>
@@ -100,7 +100,7 @@ class Page extends PureComponent{
                         <span>设置Select的初始数据</span>
                         <ul>
                             <li>
-                                data {`Array`} Select的初始选项数据
+                                data {'Array'} Select的初始选项数据
                             </li>
                         </ul>
                     </li>

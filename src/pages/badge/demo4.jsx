@@ -4,26 +4,26 @@ import FontIcon from 'r-cmui/components/FontIcon';
 import Code from '../Code';
 import Badge from 'r-cmui/components/Badge';
 
-class Demo extends BaseDemo{
-    render(){
+class Demo extends BaseDemo {
+    render () {
         return (
             <div>
-                <div className="code-box-demo">
-                    <Badge status="default" text="DEFAULT"></Badge><br/>
-                    <Badge status="primary" text="PRIMARY"></Badge><br/>
-                    <Badge status="success" text="SUCCESS"></Badge><br/>
-                    <Badge status="warning" text="WARNING"></Badge><br/>
-                    <Badge status="danger" text="DANGER"></Badge>
+                <div className='code-box-demo'>
+                    <Badge status='default' text='DEFAULT'></Badge><br/>
+                    <Badge status='primary' text='PRIMARY'></Badge><br/>
+                    <Badge status='success' text='SUCCESS'></Badge><br/>
+                    <Badge status='warning' text='WARNING'></Badge><br/>
+                    <Badge status='danger' text='DANGER'></Badge>
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">带text</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>带text</div>
                     <div>
                         带有text的badge
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Badge from 'r-cmui/components/Badge';
 

@@ -11,41 +11,41 @@ import Demo4 from './demo4';
 import Demo5 from './demo5';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Badge 徽标</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Badge 徽标</h1>
+                <blockquote className='page-tip'>
                     图标右上角的圆形徽标数字。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Button</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Button</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -61,15 +61,15 @@ class Page extends PureComponent{
                     {param: 'dot', desc: '是否显示红点', type: 'string/bool', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>addCount(num)</i>
                         <span>添加num数量</span>
                         <ul>
                             <li>
-                                num {`Number`} 要添加的数量
+                                num {'Number'} 要添加的数量
                             </li>
                         </ul>
                     </li>

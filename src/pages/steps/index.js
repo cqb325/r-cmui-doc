@@ -9,50 +9,50 @@ import Demo4 from './demo4';
 import Demo5 from './demo5';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Steps 步骤条</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Steps 步骤条</h1>
+                <blockquote className='page-tip'>
                     引导用户按照流程完成任务的导航条。<br/>
                     当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo3></Demo3>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo4></Demo4>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo5></Demo5>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Steps</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Steps</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -69,15 +69,15 @@ class Page extends PureComponent{
                     {param: 'layout', desc: '步骤条的布局 为空横向，vertical为竖直', type: 'string', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>setActive(current)</i>
                         <span>激活第current个步骤</span>
                         <ul>
                             <li>
-                                current {`Number`} 步骤索引
+                                current {'Number'} 步骤索引
                             </li>
                         </ul>
                     </li>
@@ -91,7 +91,7 @@ class Page extends PureComponent{
                     </li>
                 </ul>
 
-                <h3 className="page-h3">Steps.Step</h3>
+                <h3 className='page-h3'>Steps.Step</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},

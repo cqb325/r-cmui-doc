@@ -4,21 +4,20 @@ import FontIcon from 'r-cmui/components/FontIcon';
 import Code from '../Code';
 import Tree from 'r-cmui/components/Tree';
 
-class Demo extends BaseDemo{
-
-    componentDidMount(){
-        let tree = this.refs.tree;
-        tree.on('open', function(item){
-            if(item.open) {
-                window.setTimeout(function(){
+class Demo extends BaseDemo {
+    componentDidMount () {
+        const tree = this.refs.tree;
+        tree.on('open', (item) => {
+            if (item.open) {
+                window.setTimeout(() => {
                     tree.loadDynamicJSON(item, [{id: new Date().getTime(), text: '新节点'}]);
                 }, 300);
             }
         });
     }
 
-    render(){
-        let treeData = [{
+    render () {
+        const treeData = [{
             id: 0,
             text: '中国',
             open: true,
@@ -36,18 +35,18 @@ class Demo extends BaseDemo{
 
         return (
             <div>
-                <div className="code-box-demo">
-                    <Tree data={treeData} ref="tree" />
+                <div className='code-box-demo'>
+                    <Tree data={treeData} ref='tree' />
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">实时加载子节点</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>实时加载子节点</div>
                     <div>
                         在节点open的事件中通过loadDynamicJSON函数加载子节点
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Tree from 'r-cmui/components/Tree';
 

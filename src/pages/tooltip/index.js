@@ -7,38 +7,38 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 import Demo4 from './demo4';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Tooltip 文字提示</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Tooltip 文字提示</h1>
+                <blockquote className='page-tip'>
                     简单的文字提示气泡框。<br/>
                     鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo3></Demo3>
                     </Label>
                 </Label>
 
-                <Label grid={0.5} className="code-col">
-                    <Label className="code-box">
+                <Label grid={0.5} className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
-                    <Label className="code-box">
+                    <Label className='code-box'>
                         <Demo4></Demo4>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Tooltip</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Tooltip</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -56,15 +56,15 @@ class Page extends PureComponent{
                     {param: 'align', desc: '显示的位置为12个方向', type: 'string', default: 'top'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>setTitle(title)</i>
                         <span>设置标题</span>
                         <ul>
                             <li>
-                                title {`String`} 标题
+                                title {'String'} 标题
                             </li>
                         </ul>
                     </li>

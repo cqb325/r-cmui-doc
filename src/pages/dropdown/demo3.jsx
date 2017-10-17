@@ -6,9 +6,9 @@ import Menu from 'r-cmui/components/Menu';
 import Dropdown from 'r-cmui/components/Dropdown';
 import Button from 'r-cmui/components/Button';
 
-class Demo extends BaseDemo{
-    render(){
-        let menu = <Menu>
+class Demo extends BaseDemo {
+    render () {
+        const menu = <Menu>
             <Menu.Item>item1</Menu.Item>
             <Menu.Item>item2</Menu.Item>
             <Menu.Item>退出</Menu.Item>
@@ -17,18 +17,18 @@ class Demo extends BaseDemo{
 
         return (
             <div>
-                <div className="code-box-demo">
-                    <Dropdown action="click" overlay={menu}><Button icon="angle-down" iconAlign="right">click me</Button></Dropdown>
+                <div className='code-box-demo'>
+                    <Dropdown action='click' overlay={menu}><Button icon='angle-down' iconAlign='right'>click me</Button></Dropdown>
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">button</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>button</div>
                     <div>
                         button作为触发内容
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Menu from 'r-cmui/components/Menu';
 import Dropdown from 'r-cmui/components/Dropdown';

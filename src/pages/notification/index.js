@@ -12,55 +12,55 @@ import Demo5 from './demo5';
 import Demo6 from './demo6';
 import Demo7 from './demo7';
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Notification 通知框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Notification 通知框</h1>
+                <blockquote className='page-tip'>
                     通知框。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
                     <Col grid={0.5}>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo1></Demo1>
                             </Label>
                         </Label>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo3></Demo3>
                             </Label>
                         </Label>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo5></Demo5>
                             </Label>
                         </Label>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo7></Demo7>
                             </Label>
                         </Label>
                     </Col>
                     <Col grid={0.5}>
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo2></Demo2>
                             </Label>
                         </Label>
 
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo4></Demo4>
                             </Label>
                         </Label>
 
-                        <Label className="code-col">
-                            <Label className="code-box">
+                        <Label className='code-col'>
+                            <Label className='code-box'>
                                 <Demo6></Demo6>
                             </Label>
                         </Label>
@@ -68,8 +68,8 @@ class Page extends PureComponent{
                 </Row>
 
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Notification config参数信息</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Notification config参数信息</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -88,15 +88,15 @@ class Page extends PureComponent{
                     {param: 'onClose', desc: '关闭回调', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>success(config)</i>
                         <span>打开success通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -105,7 +105,7 @@ class Page extends PureComponent{
                         <span>打开 info 通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -114,7 +114,7 @@ class Page extends PureComponent{
                         <span>打开 warning 通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -123,7 +123,7 @@ class Page extends PureComponent{
                         <span>打开 error 通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -132,7 +132,7 @@ class Page extends PureComponent{
                         <span>打开 question 通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -141,7 +141,7 @@ class Page extends PureComponent{
                         <span>打开通知</span>
                         <ul>
                             <li>
-                                config {`Object`} 通知配置信息
+                                config {'Object'} 通知配置信息
                             </li>
                         </ul>
                     </li>
@@ -150,7 +150,7 @@ class Page extends PureComponent{
                         <span>关闭通知</span>
                         <ul>
                             <li>
-                                key {`String`} 通知的key
+                                key {'String'} 通知的key
                             </li>
                         </ul>
                     </li>
@@ -159,7 +159,7 @@ class Page extends PureComponent{
                         <span>获取通知key</span>
                         <ul>
                             <li>
-                                key {`String`} 通知的key
+                                key {'String'} 通知的key
                             </li>
                         </ul>
                     </li>

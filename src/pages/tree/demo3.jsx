@@ -4,9 +4,9 @@ import FontIcon from 'r-cmui/components/FontIcon';
 import Code from '../Code';
 import Tree from 'r-cmui/components/Tree';
 
-class Demo extends BaseDemo{
-    render(){
-        let treeData = [{
+class Demo extends BaseDemo {
+    render () {
+        const treeData = [{
             id: 0,
             text: '中国',
             open: true,
@@ -24,18 +24,18 @@ class Demo extends BaseDemo{
 
         return (
             <div>
-                <div className="code-box-demo">
+                <div className='code-box-demo'>
                     <Tree data={treeData} enableCheckbox enableSmartCheckbox />
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">级联选择</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>级联选择</div>
                     <div>
                         设置enableSmartCheckbox为true可以允许级联选择
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Tree from 'r-cmui/components/Tree';
 

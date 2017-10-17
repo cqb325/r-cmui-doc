@@ -6,104 +6,104 @@ import Row from 'r-cmui/components/Row';
 import Col from 'r-cmui/components/Col';
 import Code from '../Code';
 
-class Demo extends BaseDemo{
-    render(){
+class Demo extends BaseDemo {
+    render () {
         return (
             <div>
-                <div className="code-box-demo">
+                <div className='code-box-demo'>
                     <Row>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="topLeft">
-                                <span className="align-item">TL</span>
+                            <Tooltip title='tip text' align='topLeft'>
+                                <span className='align-item'>TL</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="top">
-                                <span className="align-item">Top</span>
+                            <Tooltip title='tip text' align='top'>
+                                <span className='align-item'>Top</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="topRight">
-                                <span className="align-item">TR</span>
+                            <Tooltip title='tip text' align='topRight'>
+                                <span className='align-item'>TR</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>&nbsp;</Col>
                     </Row>
-                    <Row className="mt-30">
+                    <Row className='mt-30'>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="leftTop">
-                                <span className="align-item">LT</span>
+                            <Tooltip title='tip text' align='leftTop'>
+                                <span className='align-item'>LT</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="rightTop">
-                                <span className="align-item">RT</span>
-                            </Tooltip>
-                        </Col>
-                    </Row>
-                    <Row className="mt-30">
-                        <Col grid={0.2}>
-                            <Tooltip title="tip text" align="left">
-                                <span className="align-item">Left</span>
-                            </Tooltip>
-                        </Col>
-                        <Col grid={0.2}>&nbsp;</Col>
-                        <Col grid={0.2}>&nbsp;</Col>
-                        <Col grid={0.2}>&nbsp;</Col>
-                        <Col grid={0.2}>
-                            <Tooltip title="tip text" align="right">
-                                <span className="align-item">Right</span>
+                            <Tooltip title='tip text' align='rightTop'>
+                                <span className='align-item'>RT</span>
                             </Tooltip>
                         </Col>
                     </Row>
-                    <Row className="mt-30">
+                    <Row className='mt-30'>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="leftBottom">
-                                <span className="align-item">LB</span>
+                            <Tooltip title='tip text' align='left'>
+                                <span className='align-item'>Left</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="rightBottom">
-                                <span className="align-item">RB</span>
+                            <Tooltip title='tip text' align='right'>
+                                <span className='align-item'>Right</span>
                             </Tooltip>
                         </Col>
                     </Row>
-                    <Row className="mt-30">
+                    <Row className='mt-30'>
+                        <Col grid={0.2}>
+                            <Tooltip title='tip text' align='leftBottom'>
+                                <span className='align-item'>LB</span>
+                            </Tooltip>
+                        </Col>
+                        <Col grid={0.2}>&nbsp;</Col>
+                        <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>&nbsp;</Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="bottomLeft">
-                                <span className="align-item">BL</span>
+                            <Tooltip title='tip text' align='rightBottom'>
+                                <span className='align-item'>RB</span>
+                            </Tooltip>
+                        </Col>
+                    </Row>
+                    <Row className='mt-30'>
+                        <Col grid={0.2}>&nbsp;</Col>
+                        <Col grid={0.2}>
+                            <Tooltip title='tip text' align='bottomLeft'>
+                                <span className='align-item'>BL</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="bottom">
-                                <span className="align-item">Bottom</span>
+                            <Tooltip title='tip text' align='bottom'>
+                                <span className='align-item'>Bottom</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>
-                            <Tooltip title="tip text" align="bottomRight">
-                                <span className="align-item">BR</span>
+                            <Tooltip title='tip text' align='bottomRight'>
+                                <span className='align-item'>BR</span>
                             </Tooltip>
                         </Col>
                         <Col grid={0.2}>&nbsp;</Col>
                     </Row>
                 </div>
-                <div className="code-box-desc">
-                    <div className="code-box-title">位置</div>
+                <div className='code-box-desc'>
+                    <div className='code-box-title'>位置</div>
                     <div>
                         支持12个不同的显示位置，通过设置align属性设置。
-                        <FontIcon icon={'chevron-circle-down'} ref="collapse" className="collapse" onClick={this.openCloseCode.bind(this)}></FontIcon>
+                        <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
-                <div className="code-box-src" ref="boxSrc">
-                    <Code className="language-jsx">
+                <div className='code-box-src' ref='boxSrc'>
+                    <Code className='language-jsx'>
                         {`
 import Tooltip from 'r-cmui/components/Tooltip';
 import Row from 'r-cmui/components/Row';

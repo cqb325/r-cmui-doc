@@ -13,47 +13,47 @@ import Demo6 from './demo6';
 import Demo7 from './demo7';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">DateTime 时间选择器</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>DateTime 时间选择器</h1>
+                <blockquote className='page-tip'>
                     选择日期和时间的控件。
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo7></Demo7>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo6></Demo6>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">DateTime</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>DateTime</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -78,15 +78,15 @@ class Page extends PureComponent{
                     {param: 'theme', desc: '主题 default dark ', type: 'string', default: 'defalt'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>getValue()</i>
                         <span>获取当前选中的日期</span>
                         <ul>
                             <li>
-                                return {`String`} 选中的日期
+                                return {'String'} 选中的日期
                             </li>
                         </ul>
                     </li>
@@ -95,7 +95,7 @@ class Page extends PureComponent{
                         <span>设置默认显示日期</span>
                         <ul>
                             <li>
-                                value {`String`} 日期 格式与当前的view或format一致
+                                value {'String'} 日期 格式与当前的view或format一致
                             </li>
                         </ul>
                     </li>

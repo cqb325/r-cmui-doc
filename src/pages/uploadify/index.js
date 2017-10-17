@@ -10,38 +10,38 @@ import Demo3 from './demo3';
 import Demo4 from './demo4';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">多上传文件</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>多上传文件</h1>
+                <blockquote className='page-tip'>
                     文件选择上传控件，展现上传的进度<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo4></Demo4>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Uploadify</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Uploadify</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -71,15 +71,15 @@ class Page extends PureComponent{
                     {param: 'multi', desc: '是否多选', type: 'boolean', default: 'true'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>setParams(params)</i>
                         <span>设置key/value参数</span>
                         <ul>
                             <li>
-                                params {`Object`} 额外的参数，键值对
+                                params {'Object'} 额外的参数，键值对
                             </li>
                         </ul>
                     </li>
@@ -90,16 +90,16 @@ class Page extends PureComponent{
                 </ul>
 
 
-                <h3 className="page-h3">mimeTypes</h3>
-                <ul className="code-methods">
+                <h3 className='page-h3'>mimeTypes</h3>
+                <ul className='code-methods'>
                     <li>
-                        <i>{`[{title : "Image files", extensions : "jpg,gif,png"}]`}</i>
+                        <i>{'[{title : "Image files", extensions : "jpg,gif,png"}]'}</i>
                         <ul>
                             <li>
-                                title {`String`} 文件选择框的说明
+                                title {'String'} 文件选择框的说明
                             </li>
                             <li>
-                                extensions {`String`} 文件后缀,隔开
+                                extensions {'String'} 文件后缀,隔开
                             </li>
                         </ul>
                     </li>

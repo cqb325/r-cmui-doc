@@ -6,31 +6,31 @@ import Demo1 from './demo1';
 import Demo2 from './demo2';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">MessageBox 消息框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>MessageBox 消息框</h1>
+                <blockquote className='page-tip'>
                     消息框。<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo1></Demo1>
                     </Label>
                 </Label>
 
-                <Label className="code-col">
-                    <Label className="code-box">
+                <Label className='code-col'>
+                    <Label className='code-box'>
                         <Demo2></Demo2>
                     </Label>
                 </Label>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">MessageBox</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>MessageBox</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -55,18 +55,18 @@ class Page extends PureComponent{
                     {param: 'onShow', desc: '消息框显示时触发', type: 'function', default: ''}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>show(msg, title)</i>
                         <span>显示消息框并设置内容或标题</span>
                         <ul>
                             <li>
-                                msg {`String`} 内容
+                                msg {'String'} 内容
                             </li>
                             <li>
-                                title {`String`} 标题
+                                title {'String'} 标题
                             </li>
                         </ul>
                     </li>
@@ -79,7 +79,7 @@ class Page extends PureComponent{
                         <span>设置消息框的附带数据</span>
                         <ul>
                             <li>
-                                data {`any`} 附带数据
+                                data {'any'} 附带数据
                             </li>
                         </ul>
                     </li>
@@ -88,7 +88,7 @@ class Page extends PureComponent{
                         <span>获取消息框的附带数据</span>
                         <ul>
                             <li>
-                                return {`any`} 消息框的附带数据
+                                return {'any'} 消息框的附带数据
                             </li>
                         </ul>
                     </li>

@@ -9,35 +9,35 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 
 
-class Page extends PureComponent{
-    render(){
+class Page extends PureComponent {
+    render () {
         return (
-            <div className="main-container">
-                <h1 className="page-h1">Dialog 对话框</h1>
-                <blockquote className="page-tip">
+            <div className='main-container'>
+                <h1 className='page-h1'>Dialog 对话框</h1>
+                <blockquote className='page-tip'>
                     模态对话框<br/>
                 </blockquote>
 
-                <h1 className="page-h1">代码演示</h1>
+                <h1 className='page-h1'>代码演示</h1>
 
                 <Row>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo1></Demo1>
                         </Label>
-                        <Label className="code-box">
+                        <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
                     </Col>
-                    <Col grid={0.5} className="code-col">
-                        <Label className="code-box">
+                    <Col grid={0.5} className='code-col'>
+                        <Label className='code-box'>
                             <Demo2></Demo2>
                         </Label>
                     </Col>
                 </Row>
 
-                <h2 className="page-h2">API</h2>
-                <h3 className="page-h3">Dialog</h3>
+                <h2 className='page-h2'>API</h2>
+                <h3 className='page-h3'>Dialog</h3>
 
                 <Table columns={[
                     {name: 'param', text: '参数'},
@@ -58,15 +58,15 @@ class Page extends PureComponent{
                     {param: 'hasCloseBtn', desc: 'Dialog是否使用右上角的关闭', type: 'boolean', default: 'true'}
                 ]}></Table>
 
-                <h3 className="page-h3">Methods</h3>
+                <h3 className='page-h3'>Methods</h3>
 
-                <ul className="code-methods">
+                <ul className='code-methods'>
                     <li>
                         <i>open(orign)</i>
                         <span>打开对话框</span>
                         <ul>
                             <li>
-                                orign {`html Element`} 可选  指定该值对话框从该元素的坐标慢慢打开
+                                orign {'html Element'} 可选  指定该值对话框从该元素的坐标慢慢打开
                             </li>
                         </ul>
                     </li>
@@ -79,7 +79,7 @@ class Page extends PureComponent{
                         <span>设置消息框的附带数据</span>
                         <ul>
                             <li>
-                                data {`any`} 附带数据
+                                data {'any'} 附带数据
                             </li>
                         </ul>
                     </li>
@@ -88,7 +88,7 @@ class Page extends PureComponent{
                         <span>获取消息框的附带数据</span>
                         <ul>
                             <li>
-                                return {`any`} 消息框的附带数据
+                                return {'any'} 消息框的附带数据
                             </li>
                         </ul>
                     </li>
@@ -97,7 +97,7 @@ class Page extends PureComponent{
                         <span>设置标题</span>
                         <ul>
                             <li>
-                                title {`String`} 标题
+                                title {'String'} 标题
                             </li>
                         </ul>
                     </li>
@@ -106,7 +106,7 @@ class Page extends PureComponent{
                         <span>设置内容</span>
                         <ul>
                             <li>
-                                content {`String/ReactElement`} 内容
+                                content {'String/ReactElement'} 内容
                             </li>
                         </ul>
                     </li>
@@ -115,7 +115,7 @@ class Page extends PureComponent{
                         <span>获取dialog的panel</span>
                         <ul>
                             <li>
-                                return {`Panel`} Panel对象
+                                return {'Panel'} Panel对象
                             </li>
                         </ul>
                     </li>
@@ -124,7 +124,7 @@ class Page extends PureComponent{
                         <span>获取dialog的容器</span>
                         <ul>
                             <li>
-                                return {`HTMLElement`} Dialog容器
+                                return {'HTMLElement'} Dialog容器
                             </li>
                         </ul>
                     </li>
@@ -133,7 +133,7 @@ class Page extends PureComponent{
                         <span>是否打开状态</span>
                         <ul>
                             <li>
-                                return {`Boolean`} 打开状态
+                                return {'Boolean'} 打开状态
                             </li>
                         </ul>
                     </li>
