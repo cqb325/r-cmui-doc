@@ -91,7 +91,7 @@
         "react/no-danger-with-children":"error",//禁止Children和dangerouslySetInnerHTML属性同时使用
         "react/no-deprecated":"error",//禁止使用废弃的方法 
         "react/no-direct-mutation-state":"error",//禁止组件状态this.state直接变更,使用setState()，唯一可以使用的是在es6组件的构造函数中
-        "react/no-find-dom-node":"error",//禁止使用findDOMNode
+        "react/no-find-dom-node":"warn",//禁止使用findDOMNode
         "react/no-is-mounted":"error",//禁止使用isMounted
         "react/no-render-return-value":"error",//禁止使用React.render的返回值 
         "react/no-string-refs":"warn",//防止使用字符串引用

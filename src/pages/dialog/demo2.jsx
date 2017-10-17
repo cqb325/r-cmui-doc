@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import BaseDemo from '../BaseDemo';
 import FontIcon from 'r-cmui/components/FontIcon';
 import Dialog from 'r-cmui/components/Dialog';
@@ -7,7 +8,7 @@ import Code from '../Code';
 
 class Demo extends BaseDemo {
     openDialog () {
-        const ele = this.refs.button;
+        const ele = ReactDOM.findDOMNode(this.refs.button);
         this.refs.dialog.open(ele);
     }
 
