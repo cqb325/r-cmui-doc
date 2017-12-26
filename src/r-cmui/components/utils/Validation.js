@@ -93,6 +93,10 @@ let Validation = {
         mobile: function(value){
             return /^1[3-8][0-9]{9}$/.test(value);
         },
+        
+        ip: function(value){
+            return /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/.test(value);
+        },
 
         /**
          * 汉字为一个字符
