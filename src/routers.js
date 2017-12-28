@@ -34,8 +34,10 @@ const Accordion = resolve => require(['./pages/accordion/index'], resolve);
 const InputNumber = resolve => require(['./pages/inputnumber/index'], resolve);
 const Notification = resolve => require(['./pages/notification/index'], resolve);
 const PageList = resolve => require(['./pages/pagelist/index'], resolve);
-const SimpleForm = resolve => require(['./pages/simpleform/index'], resolve);
+// const SimpleForm = resolve => require(['./pages/simpleform/index'], resolve);
 const TableForm = resolve => require(['./pages/tableform/index'], resolve);
+const Tab = resolve => require(['./pages/tab/index'], resolve);
+const Slider = resolve => require(['./pages/slider/index'], resolve);
 
 const routers = {
     path: '/',
@@ -95,8 +97,10 @@ const routers = {
         {path: 'InputNumber', getComponent: (next, cb) => { InputNumber((a) => { cb(null, a.default); }); }},
         {path: 'Notification', getComponent: (next, cb) => { Notification((a) => { cb(null, a.default); }); }},
         {path: 'PageList', getComponent: (next, cb) => { PageList((a) => { cb(null, a.default); }); }},
-        {path: 'SimpleForm', getComponent: (next, cb) => { SimpleForm((a) => { cb(null, a.default); }); }},
-        {path: 'TableForm', getComponent: (next, cb) => { TableForm((a) => { cb(null, a.default); }); }}
+        // {path: 'SimpleForm', getComponent: (next, cb) => { SimpleForm((a) => { cb(null, a.default); }); }},
+        {path: 'TableForm', getComponent: (next, cb) => { TableForm((a) => { cb(null, a.default); }); }},
+        {path: 'Tab', getComponent: (next, cb) => { Tab((a) => { cb(null, a.default); }); }},
+        {path: 'Slider', getComponent: (next, cb) => { Slider((a) => { cb(null, a.default); }); }}
     ]
 };
 

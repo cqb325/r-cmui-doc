@@ -34,13 +34,14 @@ export default {
                 {text: 'Dropdown', link: 'Dropdown', comp: 'dropdown/index'},
                 {text: 'Accordion', link: 'Accordion', comp: 'accordion/index'},
                 {text: 'InputNumber', link: 'InputNumber', comp: 'inputnumber/index'},
-                {text: 'Notification', link: 'Notification', comp: 'notification/index'}
+                {text: 'Notification', link: 'Notification', comp: 'notification/index'},
+                {text: 'Tab', link: 'Tab', comp: 'tab/index'},
+                {text: 'Slider', link: 'Slider', comp: 'slider/index'}
             ]
         },
         {
             text: '业务组件', children: [
                 {text: '列表页', link: 'PageList', comp: 'pagelist/index'},
-                {text: '表单', link: 'SimpleForm', comp: 'simpleform/index'},
                 {text: '表格表单', link: 'TableForm', comp: 'tableform/index'}
             ]
         }

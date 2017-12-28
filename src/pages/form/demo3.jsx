@@ -17,7 +17,7 @@ class Demo extends BaseDemo {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Form layout='stack' labelWidth='80' useDefaultSubmitBtn={false} tipAlign='top' tipTheme='primary'>
+                    <Form layout='stack' tipTheme='primary'>
                         <FormControl type='text' label='Input' required name='input' messages={{required: '请输入input的内容'}}/>
                         <FormControl type='select' label='Select' required data={['Option1','Option2']} name='select'/>
                         <FormControl type='datetime' label='DateTime' required dateOnly name='datetime'/>
@@ -41,7 +41,7 @@ import 'r-cmui/components/DateTime';
 
 ReactDOM.render(
 <div>
-    <Form layout="stack" labelWidth="80" useDefaultSubmitBtn={false} tipAlign="top" tipTheme="primary">
+    <Form layout="stack" tipTheme="primary">
         <FormControl type="text" label="Input" required name="input" messages={{required: "请输入input的内容"}}/>
         <FormControl type="select" label="Select" required data={["Option1","Option2"]} name="select"/>
         <FormControl type="datetime" label="DateTime" required dateOnly name="datetime"/>

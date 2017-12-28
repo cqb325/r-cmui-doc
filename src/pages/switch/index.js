@@ -53,7 +53,7 @@ class Page extends PureComponent {
                 ]} bordered={true} data={[
                     {param: 'className', desc: '自定义class', type: 'string', default: ''},
                     {param: 'style', desc: '自定义样式', type: 'object', default: ''},
-                    {param: 'checked', desc: '是否选中', type: 'boolean', default: 'false'},
+                    {param: 'value', desc: '是否选中', type: 'boolean', default: 'false'},
                     {param: 'disabled', desc: '是否禁用', type: 'boolean', default: 'false'},
                     {param: 'onChange', desc: '选中状态变化时触发', type: 'function', default: ''},
                     {param: 'size', desc: 'switch的尺寸 small', type: 'string', default: ''},

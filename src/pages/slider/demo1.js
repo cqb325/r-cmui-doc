@@ -2,40 +2,30 @@ import React from 'react';
 import BaseDemo from '../BaseDemo';
 import FontIcon from 'r-cmui/components/FontIcon';
 import Code from '../Code';
-import Switch from 'r-cmui/components/Switch';
+import Slider from 'r-cmui/components/Slider';
 
 class Demo extends BaseDemo {
     render () {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <div>
-                        <Switch value />
-                    </div>
-                    <div className='mt-15'>
-                        <Switch size='small' />
-                    </div>
+                    <Slider value={50} />
                 </div>
                 <div className='code-box-desc'>
-                    <div className='code-box-title'>大小</div>
+                    <div className='code-box-title'>基本用法</div>
                     <div>
-                        设置size为small可以设置小switch。
+                        简单使用
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
                 <div className='code-box-src' ref='boxSrc'>
-                    <Code>
+                    <Code className='language-jsx'>
                         {`
-import Switch from 'r-cmui/components/Switch';
+import Slider from 'r-cmui/components/Slider';
 
 ReactDOM.render(
 <div>
-    <div>
-        <Switch checked />
-    </div>
-    <div className="mt-15">
-        <Switch size="small" />
-    </div>
+    <Slider value={50} />
 </div>, mountNode);
 `}
                     </Code>

@@ -9,6 +9,7 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 import Demo4 from './demo4';
 import Demo5 from './demo5';
+import Demo6 from './demo6';
 
 
 class Page extends PureComponent {
@@ -30,6 +31,9 @@ class Page extends PureComponent {
                         <Label className='code-box'>
                             <Demo3></Demo3>
                         </Label>
+                        <Label className='code-box'>
+                            <Demo4></Demo4>
+                        </Label>
                     </Col>
                     <Col grid={0.5} className='code-col'>
                         <Label className='code-box'>
@@ -38,11 +42,8 @@ class Page extends PureComponent {
                         <Label className='code-box'>
                             <Demo5></Demo5>
                         </Label>
-                    </Col>
-
-                    <Col grid={1} className='code-col'>
                         <Label className='code-box'>
-                            <Demo4></Demo4>
+                            <Demo6></Demo6>
                         </Label>
                     </Col>
                 </Row>
@@ -67,6 +68,7 @@ class Page extends PureComponent {
                     {param: 'optionsTpl', desc: '选择后的显示的模板', type: 'string', default: ''},
                     {param: 'name', desc: '作为form表单元素的name', type: 'string', default: ''},
                     {param: 'multi', desc: '是否多选', type: 'boolean', default: 'false'},
+                    {param: 'filter(2.0.2+)', desc: '过滤', type: 'boolean', default: 'false'},
                     {param: 'onChange', desc: '选择后值改变回调', type: 'function', default: ''},
                     {param: 'hasEmptyOption', desc: 'Select是否存在空选项 单选时有效', type: 'boolean', default: 'false'},
                     {param: 'choiceText', desc: 'Select空选项的显示文字 单选时有效', type: 'string', default: '--请选择--'},

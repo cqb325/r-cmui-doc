@@ -23,14 +23,14 @@ class Demo extends BaseDemo {
             <div>
                 <div className='code-box-demo'>
                     <Form layout='stack-inline' labelWidth={90}>
-                        <FormControl type='text' label='Input' name='input'/>
-                        <FormControl type='select' label='Select' data={['Option1','Option2']} name='select' />
-                        <FormControl type='datetime' label='DateTime' dateOnly name='datetime' />
-                        <FormControl type='daterange' label='DateRange' maxRange={30} name='daterange' />
-                        <FormControl type='checkbox' label='checkbox' data={[{id: '0', text: 'check1'},{id: '1', text: 'check2'}]} name='checkbox' />
-                        <FormControl type='radio' stick label='Radio' data={[{id: '0', text: 'radio1'},{id: '1', text: 'radio2'}]} name='radio' />
-                        <FormControl type='file' label='Upload' name='file' />
-                        <FormControl type='textarea' label='TextArea' height='50' name='textarea' />
+                        <FormControl type='text' label='Input: ' name='input'/>
+                        <FormControl type='select' label='Select: ' data={['Option1','Option2']} name='select' />
+                        <FormControl type='datetime' label='DateTime: ' dateOnly name='datetime' />
+                        <FormControl type='daterange' label='DateRange: ' maxRange={30} name='daterange' />
+                        <FormControl type='checkbox' label='checkbox: ' data={[{id: '0', text: 'check1'},{id: '1', text: 'check2'}]} name='checkbox' />
+                        <FormControl type='radio' stick label='Radio: ' data={[{id: '0', text: 'radio1'},{id: '1', text: 'radio2'}]} name='radio' />
+                        <FormControl type='file' label='Upload: ' name='file' />
+                        <FormControl type='textarea' label='TextArea: ' height='50' name='textarea' />
                     </Form>
                 </div>
                 <div className='code-box-desc'>

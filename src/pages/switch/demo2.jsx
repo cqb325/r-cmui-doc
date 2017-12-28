@@ -9,7 +9,7 @@ class Demo extends BaseDemo {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Switch checked />
+                    <Switch value />
                 </div>
                 <div className='code-box-desc'>
                     <div className='code-box-title'>默认选中</div>

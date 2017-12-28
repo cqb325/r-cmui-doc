@@ -6,6 +6,7 @@ import Demo1 from './demo1';
 import Demo2 from './demo2';
 import Demo3 from './demo3';
 import Demo4 from './demo4';
+import Demo5 from './demo5';
 
 
 class Page extends PureComponent {
@@ -43,6 +44,12 @@ class Page extends PureComponent {
                     </Label>
                 </Label>
 
+                <Label className='code-col'>
+                    <Label className='code-box'>
+                        <Demo5 />
+                    </Label>
+                </Label>
+
                 <h2 className='page-h2'>API</h2>
                 <h3 className='page-h3'>Pagination</h3>
 
@@ -57,7 +64,8 @@ class Page extends PureComponent {
                     {param: 'current', desc: '当前选中的页号', type: 'number', default: ''},
                     {param: 'total', desc: '记录总数', type: 'number', default: ''},
                     {param: 'pageSize', desc: '每页记录数', type: 'number', default: ''},
-                    {param: 'displayInfo', desc: '是否限制具体页数总记录跳转等信息', type: 'boolean', default: 'true'},
+                    {param: 'displayInfo', desc: '是否限制具体页数总记录跳转等信息', type: 'boolean', default: 'false'},
+                    {param: 'min', desc: '只显示前一页和后一页按钮', type: 'boolean', default: 'false'},
                     {param: 'onShowSizeChange', desc: 'pageSize变化时触发', type: 'function', default: ''},
                     {param: 'onChange', desc: '页号变化时触发', type: 'function', default: ''},
                     {param: 'shape', desc: '页号的形状 目前只有circle', type: 'string', default: ''}

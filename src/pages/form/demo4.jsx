@@ -17,16 +17,20 @@ class Demo extends BaseDemo {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Form layout='stack' labelWidth={80} method='post' ajax action='server/api'>
+                    <Form layout='stack' method='post' ajax action='server/api' data={{
+                        input: 'initText',
+                        select: 'Option2',
+                        datetime: '2017-12-26'
+                    }}>
                         <FormControl type='text' label='Input' required name='input' messages={{required: '请输入input的内容'}}/>
                         <FormControl type='select' label='Select' required data={['Option1','Option2']} name='select'/>
                         <FormControl type='datetime' label='DateTime' required dateOnly name='datetime'/>
                     </Form>
                 </div>
                 <div className='code-box-desc'>
-                    <div className='code-box-title'>method</div>
+                    <div className='code-box-title'>初始化</div>
                     <div>
-                        method 支持get post 、ajax和custom, get和post使用表单方式提交，ajax以ajax方式提交，custom自定义方式。
+                        设置Form的data属性可以初始化该表单
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
@@ -41,10 +45,14 @@ import 'r-cmui/components/DateTime';
 
 ReactDOM.render(
 <div>
-    <Form layout="stack" labelWidth={80} method="post" ajax action="server/api">
-        <FormControl type="text" label="Input" required name="input" messages={{required: '请输入input的内容'}}/>
-        <FormControl type="select" label="Select" required data={['Option1','Option2']} name="select"/>
-        <FormControl type="datetime" label="DateTime" required dateOnly name="datetime"/>
+    <Form layout='stack' method='post' ajax action='server/api' data={{
+        input: 'initText',
+        select: 'Option2',
+        datetime: '2017-12-26'
+    }}>
+        <FormControl type='text' label='Input' required name='input' messages={{required: '请输入input的内容'}}/>
+        <FormControl type='select' label='Select' required data={['Option1','Option2']} name='select'/>
+        <FormControl type='datetime' label='DateTime' required dateOnly name='datetime'/>
     </Form>
 </div>, mountNode);
 `}

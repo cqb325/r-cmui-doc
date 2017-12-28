@@ -36,7 +36,7 @@ class Demo extends BaseDemo {
                         </SubMenu>
                     </Menu>
                     <div className='mt-30'>
-                        <Switch checkedText='dark' checked unCheckedText='light' onChange={this.switchTheme.bind(this)}></Switch>
+                        <Switch checkedText='dark' value unCheckedText='light' onChange={this.switchTheme.bind(this)}></Switch>
                     </div>
                 </div>
                 <div className='code-box-desc'>

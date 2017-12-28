@@ -9,7 +9,7 @@ class Demo extends BaseDemo {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Switch disabled />
+                    <Switch disabled value/>
                 </div>
                 <div className='code-box-desc'>
                     <div className='code-box-title'>禁用</div>

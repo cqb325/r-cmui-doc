@@ -10,6 +10,7 @@ import Demo3 from './demo3';
 import Demo4 from './demo4';
 import Demo5 from './demo5';
 import Demo6 from './demo6';
+import Demo7 from './demo7';
 
 class Page extends PureComponent {
     render () {
@@ -32,6 +33,9 @@ class Page extends PureComponent {
                         </Label>
                         <Label className='code-box'>
                             <Demo5></Demo5>
+                        </Label>
+                        <Label className='code-box'>
+                            <Demo7 />
                         </Label>
                     </Col>
                     <Col grid={0.5} className='code-col'>
@@ -68,7 +72,9 @@ class Page extends PureComponent {
                     {param: 'iconAlign', desc: '图标位置 left right', type: 'string', default: 'left'},
                     {param: 'size', desc: '按钮尺寸 large small', type: 'string', default: ''},
                     {param: 'target', desc: '跳转的目标通a标签的target', type: 'string', default: ''},
-                    {param: 'onClick', desc: '点击后触发', type: 'function', default: ''}
+                    {param: 'onClick', desc: '点击后触发', type: 'function', default: ''},
+                    {param: 'animation', desc: '是否启用水滴效果', type: 'bool', default: 'true'},
+                    {param: 'loadding', desc: '是否启用loadding', type: 'bool', default: 'false'}
                 ]}></Table>
 
                 <h3 className='page-h3'>Methods</h3>
@@ -81,24 +87,6 @@ class Page extends PureComponent {
                     <li>
                         <i>enable()</i>
                         <span>激活</span>
-                    </li>
-                    <li>
-                        <i>setText(text)</i>
-                        <span>设置按钮的文字</span>
-                        <ul>
-                            <li>
-                                text {'String'} 要设置的按钮文字
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <i>getActive()</i>
-                        <span>获取激活状态</span>
-                        <ul>
-                            <li>
-                                return {'Boolean'} true 激活 其他为失活
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <i>setActive(active)</i>

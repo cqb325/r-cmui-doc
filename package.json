@@ -62,6 +62,7 @@
     "core-js": "^2.5.1",
     "prismjs": "^1.8.1",
     "r-cmui": "^2.0.1",
+    "react-draggable": "^3.0.4",
     "store": "^2.0.12"
   }
 }
