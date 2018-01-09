@@ -7,7 +7,7 @@ export default {
                 {text: 'CheckBox', link: 'CheckBox', comp: 'checkbox/index'},
                 {text: 'Radio', link: 'Radio', comp: 'radio/index'},
                 {text: 'Icon', link: 'Icon', comp: 'icon/index'},
-                {text: 'Grid', link: 'Grid', comp: 'grid/index'},
+                {text: 'Grids', link: 'Grids', comp: 'grids/index'},
                 {text: 'Layout', link: 'Layout', comp: 'layout/index'},
                 {text: 'Breadcrumb', link: 'Breadcrumb', comp: 'breadcrumb/index'},
                 {text: 'DateTime', link: 'DateTime', comp: 'datetime/index'},
@@ -40,7 +40,8 @@ export default {
                 {text: 'Transfer', link: 'Transfer', comp: 'transfer/index'},
                 {text: 'Avatar', link: 'Avatar', comp: 'avatar/index'},
                 {text: 'List', link: 'List', comp: 'list/index'},
-                {text: 'Tag', link: 'Tag', comp: 'tag/index'}
+                {text: 'Tag', link: 'Tag', comp: 'tag/index'},
+                {text: 'Grid', link: 'Grid', comp: 'grid/index'}
             ]
         },
         {

@@ -1,76 +1,95 @@
 import React from 'react';
 import BaseDemo from '../BaseDemo';
 import FontIcon from 'r-cmui/components/FontIcon';
-import Row from 'r-cmui/components/Row';
-import Col from 'r-cmui/components/Col';
+import Grid from 'r-cmui/components/Grid';
+import Progress from 'r-cmui/components/Progress';
 import Code from '../Code';
 
 class Demo extends BaseDemo {
+    columns = [
+        {type: 'index', text: '序号'},
+        {name: 'name', text: '名称', sort: true, sortType: 'string', tip: true},
+        {name: 'domain', text: '域名', width: 200, resize: true, format: (value) => {
+            return <span>
+                {value}{value}{value}{value}{value}{value}{value}{value}
+            </span>;
+        }},
+        {name: 'ip', text: 'IP'},
+        {name: 'city', text: '城市'},
+        {name: 'time', text: '时间', format: (v, column, row) => {
+            return <Progress key={row.id} value={row.percent} strokeWidth={4} showPercent={false}/>;
+        }}
+    ];
+    
     render () {
+        const data = [];
+        for (let i = 0; i < 1000; i++) {
+            data.push({
+                id: `id_${i}`,
+                name: `name_${i}`,
+                domain: `domain_${i}`,
+                ip: `ip_${i}`,
+                city: `city_${i}`,
+                time: `time_${i}`,
+                percent: Math.random() * 100
+            });
+        }
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Row className='demo-row'>
-                        <Col grid={1} className='demo-col'>grid(1)</Col>
-                    </Row>
-                    <Row className='demo-row'>
-                        <Col grid={1 / 4} className='demo-col'>grid(1/4)</Col>
-                        <Col grid={1 / 4} className='demo-col lighter'>grid(1/4)</Col>
-                        <Col grid={1 / 4} className='demo-col'>grid(1/4)</Col>
-                        <Col grid={1 / 4} className='demo-col lighter'>grid(1/4)</Col>
-                    </Row>
-                    <Row className='demo-row'>
-                        <Col grid={1 / 3} className='demo-col'>grid(1/3)</Col>
-                        <Col grid={1 / 3} className='demo-col lighter'>grid(1/3)</Col>
-                        <Col grid={1 / 3} className='demo-col'>grid(1/3)</Col>
-                    </Row>
-                    <Row className='demo-row'>
-                        <Col grid={1 / 2} className='demo-col'>grid(1/2)</Col>
-                        <Col grid={1 / 2} className='demo-col lighter'>grid(1/2)</Col>
-                    </Row>
-                    <Row className='demo-row'>
-                        <Col grid={5 / 6} className='demo-col'>grid(5/6)</Col>
-                        <Col grid={1 / 6} className='demo-col lighter'>grid(1/6)</Col>
-                    </Row>
+                    <div style={{height: 800, width: 1200}}>
+                        <Grid columns={this.columns} selectMode='row' border data={data} total={data.length} pageSize={50} smart/>
+                    </div>
                 </div>
                 <div className='code-box-desc'>
                     <div className='code-box-title'>基本用法</div>
                     <div>
-                        布局的栅格化系统，我们是基于行（row）和列（col）来定义信息区块的外部框架，以保证页面的每个区域能够稳健地排布起来
+                        简单用法 smart为动态渲染
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
                 <div className='code-box-src' ref='boxSrc'>
-                    <Code>
+                    <Code className='language-jsx'>
                         {`
-import Row from 'r-cmui/components/Row';
-import Col from 'r-cmui/components/Col';
+import Grid from 'r-cmui/components/Grid';
+import Progress from 'r-cmui/components/Progress';
 
-ReactDOM.render(
-<div>
-    <Row className="demo-row">
-        <Col grid={1} className="demo-col">grid(1)</Col>
-    </Row>
-    <Row className="demo-row">
-        <Col grid={1/4} className="demo-col">grid(1/4)</Col>
-        <Col grid={1/4} className="demo-col lighter">grid(1/4)</Col>
-        <Col grid={1/4} className="demo-col">grid(1/4)</Col>
-        <Col grid={1/4} className="demo-col lighter">grid(1/4)</Col>
-    </Row>
-    <Row className="demo-row">
-        <Col grid={1/3} className="demo-col">grid(1/3)</Col>
-        <Col grid={1/3} className="demo-col lighter">grid(1/3)</Col>
-        <Col grid={1/3} className="demo-col">grid(1/3)</Col>
-    </Row>
-    <Row className="demo-row">
-        <Col grid={1/2} className="demo-col">grid(1/2)</Col>
-        <Col grid={1/2} className="demo-col lighter">grid(1/2)</Col>
-    </Row>
-    <Row className="demo-row">
-        <Col grid={5/6} className="demo-col">grid(5/6)</Col>
-        <Col grid={1/6} className="demo-col lighter">grid(1/6)</Col>
-    </Row>
-</div>, mountNode);
+class Demo extends BaseDemo {
+    columns = [
+        {type: 'index', text: '序号'},
+        {name: 'name', text: '名称', sort: true, sortType: 'string', tip: true},
+        {name: 'domain', text: '域名', width: 200, resize: true, format: (value) => {
+            return <span>
+                {value}{value}{value}{value}{value}{value}{value}{value}
+            </span>;
+        }},
+        {name: 'ip', text: 'IP'},
+        {name: 'city', text: '城市'},
+        {name: 'time', text: '时间', format: (v, column, row) => {
+            return <Progress key={row.id} value={row.percent} strokeWidth={4} showPercent={false}/>;
+        }}
+    ];
+
+    render () {
+        const data = [];
+        for (let i = 0; i < 1000; i++) {
+            data.push({
+                id: \`id_\${i}\`,
+                name: \`name_\${i}\`,
+                domain: \`domain_\${i}\`,
+                ip: \`ip_\${i}\`,
+                city: \`city_\${i}\`,
+                time: \`time_\${i}\`,
+                percent: Math.random() * 100
+            });
+        }
+        return <div className='code-box-demo'>
+            <div style={{height: 800, width: 1200}}>
+                <Grid columns={this.columns} selectMode='row' border data={data} total={data.length} pageSize={50} smart/>
+            </div>
+        </div>;
+    }
+}
 `}
                     </Code>
                 </div>

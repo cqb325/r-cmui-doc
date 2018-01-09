@@ -5,7 +5,7 @@ import App from './app';
 
 const Radio = resolve => require(['./pages/radio/index'], resolve);
 const Icon = resolve => require(['./pages/icon/index'], resolve);
-const Grid = resolve => require(['./pages/grid/index'], resolve);
+const Grids = resolve => require(['./pages/grids/index'], resolve);
 const Layout = resolve => require(['./pages/layout/index'], resolve);
 const Breadcrumb = resolve => require(['./pages/breadcrumb/index'], resolve);
 const DateTime = resolve => require(['./pages/datetime/index'], resolve);
@@ -42,6 +42,7 @@ const Transfer = resolve => require(['./pages/transfer/index'], resolve);
 const Avatar = resolve => require(['./pages/avatar/index'], resolve);
 const List = resolve => require(['./pages/list/index'], resolve);
 const Tag = resolve => require(['./pages/tag/index'], resolve);
+const Grid = resolve => require(['./pages/grid/index'], resolve);
 
 const routers = {
     path: '/',
@@ -72,7 +73,7 @@ const routers = {
             }
         },
         {path: 'Icon', getComponent: (next, cb) => { Icon((a) => { cb(null, a.default); }); }},
-        {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }},
+        {path: 'Grids', getComponent: (next, cb) => { Grids((a) => { cb(null, a.default); }); }},
         {path: 'Layout', getComponent: (next, cb) => { Layout((a) => { cb(null, a.default); }); }},
         {path: 'Breadcrumb', getComponent: (next, cb) => { Breadcrumb((a) => { cb(null, a.default); }); }},
         {path: 'DateTime', getComponent: (next, cb) => { DateTime((a) => { cb(null, a.default); }); }},
@@ -108,7 +109,8 @@ const routers = {
         {path: 'Transfer', getComponent: (next, cb) => { Transfer((a) => { cb(null, a.default); }); }},
         {path: 'Avatar', getComponent: (next, cb) => { Avatar((a) => { cb(null, a.default); }); }},
         {path: 'List', getComponent: (next, cb) => { List((a) => { cb(null, a.default); }); }},
-        {path: 'Tag', getComponent: (next, cb) => { Tag((a) => { cb(null, a.default); }); }}
+        {path: 'Tag', getComponent: (next, cb) => { Tag((a) => { cb(null, a.default); }); }},
+        {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }}
     ]
 };
 
