@@ -36,7 +36,11 @@ export default {
                 {text: 'InputNumber', link: 'InputNumber', comp: 'inputnumber/index'},
                 {text: 'Notification', link: 'Notification', comp: 'notification/index'},
                 {text: 'Tab', link: 'Tab', comp: 'tab/index'},
-                {text: 'Slider', link: 'Slider', comp: 'slider/index'}
+                {text: 'Slider', link: 'Slider', comp: 'slider/index'},
+                {text: 'Transfer', link: 'Transfer', comp: 'transfer/index'},
+                {text: 'Avatar', link: 'Avatar', comp: 'avatar/index'},
+                {text: 'List', link: 'List', comp: 'list/index'},
+                {text: 'Tag', link: 'Tag', comp: 'tag/index'}
             ]
         },
         {

@@ -38,6 +38,10 @@ const PageList = resolve => require(['./pages/pagelist/index'], resolve);
 const TableForm = resolve => require(['./pages/tableform/index'], resolve);
 const Tab = resolve => require(['./pages/tab/index'], resolve);
 const Slider = resolve => require(['./pages/slider/index'], resolve);
+const Transfer = resolve => require(['./pages/transfer/index'], resolve);
+const Avatar = resolve => require(['./pages/avatar/index'], resolve);
+const List = resolve => require(['./pages/list/index'], resolve);
+const Tag = resolve => require(['./pages/tag/index'], resolve);
 
 const routers = {
     path: '/',
@@ -100,7 +104,11 @@ const routers = {
         // {path: 'SimpleForm', getComponent: (next, cb) => { SimpleForm((a) => { cb(null, a.default); }); }},
         {path: 'TableForm', getComponent: (next, cb) => { TableForm((a) => { cb(null, a.default); }); }},
         {path: 'Tab', getComponent: (next, cb) => { Tab((a) => { cb(null, a.default); }); }},
-        {path: 'Slider', getComponent: (next, cb) => { Slider((a) => { cb(null, a.default); }); }}
+        {path: 'Slider', getComponent: (next, cb) => { Slider((a) => { cb(null, a.default); }); }},
+        {path: 'Transfer', getComponent: (next, cb) => { Transfer((a) => { cb(null, a.default); }); }},
+        {path: 'Avatar', getComponent: (next, cb) => { Avatar((a) => { cb(null, a.default); }); }},
+        {path: 'List', getComponent: (next, cb) => { List((a) => { cb(null, a.default); }); }},
+        {path: 'Tag', getComponent: (next, cb) => { Tag((a) => { cb(null, a.default); }); }}
     ]
 };
 
