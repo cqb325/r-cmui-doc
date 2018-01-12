@@ -10,7 +10,7 @@ class Demo extends BaseDemo {
         return (
             <div>
                 <div className='code-box-demo'>
-                    <Menu style={{width: 300}}>
+                    <Menu style={{width: 300}} layout='vertical'>
                         <SubMenu title={<span><FontIcon icon='th-large'></FontIcon>Navigation One</span>}>
                             <MenuItemGroup title='Item Group'>
                                 <Menu.Item>item1</Menu.Item>
