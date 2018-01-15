@@ -41,7 +41,8 @@ export default {
                 {text: 'Avatar', link: 'Avatar', comp: 'avatar/index'},
                 {text: 'List', link: 'List', comp: 'list/index'},
                 {text: 'Tag', link: 'Tag', comp: 'tag/index'},
-                {text: 'Grid', link: 'Grid', comp: 'grid/index'}
+                {text: 'Grid', link: 'Grid', comp: 'grid/index'},
+                {text: 'ContextMenu', link: 'ContextMenu', comp: 'contextmenu/index'}
             ]
         },
         {

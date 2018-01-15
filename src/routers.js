@@ -43,6 +43,7 @@ const Avatar = resolve => require(['./pages/avatar/index'], resolve);
 const List = resolve => require(['./pages/list/index'], resolve);
 const Tag = resolve => require(['./pages/tag/index'], resolve);
 const Grid = resolve => require(['./pages/grid/index'], resolve);
+const ContextMenu = resolve => require(['./pages/contextmenu/index'], resolve);
 
 const routers = {
     path: '/',
@@ -110,7 +111,8 @@ const routers = {
         {path: 'Avatar', getComponent: (next, cb) => { Avatar((a) => { cb(null, a.default); }); }},
         {path: 'List', getComponent: (next, cb) => { List((a) => { cb(null, a.default); }); }},
         {path: 'Tag', getComponent: (next, cb) => { Tag((a) => { cb(null, a.default); }); }},
-        {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }}
+        {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }},
+        {path: 'ContextMenu', getComponent: (next, cb) => { ContextMenu((a) => { cb(null, a.default); }); }}
     ]
 };
 

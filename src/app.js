@@ -16,9 +16,7 @@ class App extends React.Component {
                         <Nav/>
                     </Sider>
                     <Content>
-                        <div className='main-container'>
-                            {this.props.children}
-                        </div>
+                        {this.props.children}
                     </Content>
                 </Layout>
             </Layout>
