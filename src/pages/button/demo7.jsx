@@ -6,17 +6,17 @@ import Code from '../Code';
 
 class Demo extends BaseDemo {
     state = {
-        loadding: false
+        loading: false
     }
 
     upload = () => {
         this.setState({
-            loadding: !this.state.loadding
+            loading: !this.state.loading
         });
 
         window.setTimeout(() => {
             this.setState({
-                loadding: !this.state.loadding
+                loading: !this.state.loading
             });
         }, 2000);
     }
@@ -26,13 +26,13 @@ class Demo extends BaseDemo {
             <div>
                 <div className='code-box-demo'>
                     <div>
-                        <Button theme='primary' loadding={this.state.loadding} onClick={this.upload}>UPLOAD</Button>
+                        <Button theme='primary' loading={this.state.loading} onClick={this.upload}>UPLOAD</Button>
                     </div>
                 </div>
                 <div className='code-box-desc'>
-                    <div className='code-box-title'>loadding</div>
+                    <div className='code-box-title'>loading</div>
                     <div>
-                        Button设置loadding后显示一个loadding图标，并且无法响应点击事件，防止双击提交。
+                        Button设置loading后显示一个loading图标，并且无法响应点击事件，防止双击提交。
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>
@@ -43,17 +43,17 @@ import Button from 'r-cmui/components/Button';
 
 class Demo extends BaseDemo{
     state = {
-        loadding: false
+        loading: false
     }
 
     upload = () => {
         this.setState({
-            loadding: !this.state.loadding
+            loading: !this.state.loading
         });
 
         window.setTimeout(() => {
             this.setState({
-                loadding: !this.state.loadding
+                loading: !this.state.loading
             });
         }, 2000);
     }
@@ -61,7 +61,7 @@ class Demo extends BaseDemo{
     render(){
         <div>
             <div>
-                <Button theme='primary' loadding={this.state.loadding} onClick={this.upload}>UPLOAD</Button>
+                <Button theme='primary' loading={this.state.loading} onClick={this.upload}>UPLOAD</Button>
             </div>
         </div>
     }

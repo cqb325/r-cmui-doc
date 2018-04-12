@@ -514,6 +514,7 @@ class Select extends BaseComponent {
     getChildrenOptions () {
         this.text = [];
         return React.Children.map(this.props.children, (child) => {
+            console.log(child);
             const componentName = child.type && child.type.displayName ? child.type.displayName : '';
             if (componentName === 'Option') {
                 const value = child.props.value;
@@ -719,7 +720,7 @@ class Select extends BaseComponent {
 
     render () {
         let {className, style, grid, multi} = this.props;
-        className = classNames('cm-select', getGrid(grid), {
+        className = classNames('cm-select', className, getGrid(grid), {
             'cm-select-active': this.state.active,
             'cm-select-disabled': this.state.disabled,
             'cm-select-dropup': this.state.dropup,

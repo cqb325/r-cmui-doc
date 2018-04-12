@@ -4,9 +4,11 @@ import Table from 'r-cmui/components/Table';
 
 import Demo1 from './demo1';
 import Demo2 from './demo2';
+import Demo3 from './demo3';
 
 
 class Page extends PureComponent {
+    displayName = 'Page';
     render () {
         return (
             <div className='main-container'>
@@ -26,6 +28,11 @@ class Page extends PureComponent {
                 <Label className='code-col'>
                     <Label className='code-box'>
                         <Demo2></Demo2>
+                    </Label>
+                </Label>
+                <Label className='code-col'>
+                    <Label className='code-box'>
+                        <Demo3></Demo3>
                     </Label>
                 </Label>
 
@@ -91,6 +98,14 @@ class Page extends PureComponent {
                                 return {'any'} 消息框的附带数据
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <i>showLoading()</i>
+                        <span>显示loading</span>
+                    </li>
+                    <li>
+                        <i>hideLoading()</i>
+                        <span>隐藏loading</span>
                     </li>
                 </ul>
             </div>

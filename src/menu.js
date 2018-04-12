@@ -14,6 +14,7 @@ export default {
                 {text: 'DateRange', link: 'DateRange', comp: 'daterange/index'},
                 {text: 'Pagination', link: 'Pagination', comp: 'pagination/index'},
                 {text: 'Input', link: 'Input', comp: 'input/index'},
+                {text: 'InputGroup', link: 'InputGroup', comp: 'inputGroup/index'},
                 {text: 'Form', link: 'Form', comp: 'form/index'},
                 {text: 'Steps', link: 'Steps', comp: 'steps/index'},
                 {text: 'Switch', link: 'Switch', comp: 'switch/index'},

@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <Layout className='app'>
                 <Header>
-                    <h3>CMUI v2.0.2</h3>
+                    <h3>CMUI v2.2.0</h3>
                 </Header>
                 <Layout>
                     <Sider>
