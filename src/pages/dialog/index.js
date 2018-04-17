@@ -7,6 +7,7 @@ import Col from 'r-cmui/components/Col';
 import Demo1 from './demo1';
 import Demo2 from './demo2';
 import Demo3 from './demo3';
+import Demo4 from './demo4';
 
 
 class Page extends PureComponent {
@@ -32,6 +33,9 @@ class Page extends PureComponent {
                     <Col grid={0.5} className='code-col'>
                         <Label className='code-box'>
                             <Demo2></Demo2>
+                        </Label>
+                        <Label className='code-box'>
+                            <Demo4/>
                         </Label>
                     </Col>
                 </Row>

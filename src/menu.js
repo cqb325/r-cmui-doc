@@ -43,7 +43,8 @@ export default {
                 {text: 'List', link: 'List', comp: 'list/index'},
                 {text: 'Tag', link: 'Tag', comp: 'tag/index'},
                 {text: 'Grid', link: 'Grid', comp: 'grid/index'},
-                {text: 'ContextMenu', link: 'ContextMenu', comp: 'contextmenu/index'}
+                {text: 'ContextMenu', link: 'ContextMenu', comp: 'contextmenu/index'},
+                {text: 'Contacts', link: 'Contacts', comp: 'contacts/index'}
             ]
         },
         {
