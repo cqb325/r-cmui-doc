@@ -16,7 +16,6 @@ import Dom from '../utils/Dom';
 import Input from '../Input/index';
 import FormControl from '../FormControl/index';
 import grids from '../utils/grids';
-import {fromJS} from 'immutable';
 import PinYin from '../utils/PinYin';
 import '../utils/PinYinDictFirstLetter';
 
@@ -174,7 +173,7 @@ class Select extends BaseComponent {
         textField: 'text',
         valueField: 'id',
         sep: ',',
-        choiceText: '请选择',
+        choiceText: window.RCMUI_I18N['Select.choiceText'],
         active: false,
         value: '',
         group: false
@@ -312,7 +311,8 @@ class Select extends BaseComponent {
             return null;
         }
         // 生成一个新的数据， 防止后续操作影响到改数据
-        data = fromJS(data).toJS();
+        // data = fromJS(data).toJS();
+        data = JSON.parse(JSON.stringify(data));
 
         // let defaultValues = defaultValue ? (defaultValue + '').split(this.sep) : [];
         if (Core.isArray(data)) {
@@ -402,8 +402,10 @@ class Select extends BaseComponent {
         html = `${html}<input type="hidden" class="${this.props.className || ''}" name="${ 
             this.props.name || ''}" value="${this.state.value || ''}">`;
 
-
-        return (<span style={{maxWidth: this.props.maxWidth, minWidth: this.props.minWidth}} className={className} dangerouslySetInnerHTML={{__html: html}} />);
+        const w = this.props.style ? this.props.style.width : null;
+        const maxW = (w && this.props.maxWidth) ? Math.max(this.props.maxWidth, w) : this.props.maxWidth || w;
+        const minW = (w && this.props.minWidth) ? Math.min(this.props.minWidth, w) : this.props.minWidth || w;
+        return (<span style={{maxWidth: maxW, minWidth: minW}} className={className} dangerouslySetInnerHTML={{__html: html}} />);
     }
 
     _renderFilter () {
@@ -565,6 +567,7 @@ class Select extends BaseComponent {
                 item={item}
                 multi={multi}
                 show={show}
+                disabled={item.disabled}
                 itemBind={this.itemBind}
                 itemUnBind={this.itemUnBind}
                 onClick={this._selectItem}
@@ -797,10 +800,11 @@ class Select extends BaseComponent {
 
     componentWillUnmount () {
         this._isMounted = false;
+        this.lastSelectItem = null;
     }
 
     componentWillReceiveProps (nextProps) {
-        const value = nextProps.value;
+        const value = nextProps.value === 'undefined' ? '' : nextProps.value;
         if (value !== this.props.value && value !== this.state.value) {
             this.setState({ value });
         }

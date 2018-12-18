@@ -167,6 +167,7 @@ class DateRange extends BaseComponent {
      */
     hide () {
         const ele = ReactDOM.findDOMNode(this.refs.datePicker);
+        this._isSelecting = false;
         velocity(ele, 'fadeOut', {
             delay: 200,
             duration: 300,
@@ -270,16 +271,17 @@ class DateRange extends BaseComponent {
             temp.set('hour', time.get('hour'));
             temp.set('minute', time.get('minute'));
             temp.set('second', time.get('second'));
+            temp.set('millisecond', 0);
 
-            if (this.props.endDate) {
-                const endDate = moment(this.props.endDate);
+            if (this.state.endDate) {
+                const endDate = moment(this.state.endDate);
                 if (endDate.isBefore(temp)) {
                     temp = endDate;
                 }
             }
 
-            if (this.props.startDate) {
-                const startDate = moment(this.props.startDate);
+            if (this.state.startDate) {
+                const startDate = moment(this.state.startDate);
                 if (temp.isBefore(startDate)) {
                     temp = startDate;
                 }
@@ -357,7 +359,7 @@ class DateRange extends BaseComponent {
     }
     
     resetEndOutRange (dateStr, ref) {
-        if (dateStr && dateStr.isSame(this.props.endDate)) {
+        if (dateStr && dateStr.isSame(this.state.endDate)) {
             const end = this.getNewDateTime(dateStr, ref.getCurrent());
             if (dateStr.isBefore(end)) {
                 ref.setValue(dateStr.format('HH:mm:ss'));
@@ -366,7 +368,7 @@ class DateRange extends BaseComponent {
     }
 
     resetStartOutRange (dateStr, ref) {
-        if (dateStr && dateStr.isSame(this.props.startDate)) {
+        if (dateStr && dateStr.isSame(this.state.startDate)) {
             const start = this.getNewDateTime(dateStr, ref.getCurrent());
             if (dateStr.isAfter(start)) {
                 ref.setValue(dateStr.format('HH:mm:ss'));
@@ -555,11 +557,43 @@ class DateRange extends BaseComponent {
         this.hide();
     }
 
+    /**
+     * 设置开始时间
+     * @param {*} value 
+     */
+    setStartDate (value) {
+        this.setState({
+            startDate: value
+        }, () => {
+            if (this.state.start) {
+                this.onChangeTime();
+            }
+        });
+        this.refs.startDate.setStartDate(moment(value, this.props.format).format(this.props.format.split(' ')[0]));
+        this.refs.endDate.setStartDate(moment(value, this.props.format).format(this.props.format.split(' ')[0]));
+    }
+
+    /**
+     * 设置允许的结束时间
+     * @param {*} value 
+     */
+    setEndDate (value) {
+        this.setState({
+            endDate: value
+        }, () => {
+            if (this.state.start) {
+                this.onChangeTime();
+            }
+        });
+        this.refs.startDate.setEndDate(moment(value, this.props.format).format(this.props.format.split(' ')[0]));
+        this.refs.endDate.setEndDate(moment(value, this.props.format).format(this.props.format.split(' ')[0]));
+    }
+
     renderTools () {
         const {clear} = this.props;
         if (clear) {
             return <span className='pull-right'>
-                <Button theme='info' size='small' raised onClick={this.clear}>清除</Button>
+                <Button theme='info' size='small' raised onClick={this.clear}>{window.RCMUI_I18N['DateRange.clear']}</Button>
             </span>;
         } else {
             return null;
@@ -633,15 +667,16 @@ class DateRange extends BaseComponent {
             dateOnly: true,
             value: start,
             completion: false,
-            startDate: this.state.startDate,
-            endDate: this.state.endDate
+            startDate: this.state.startDate ? moment(this.state.startDate, this.props.format).format(this.props.format.split(' ')[0]) : null,
+            endDate: this.state.endDate ? moment(this.state.endDate, this.props.format).format(this.props.format.split(' ')[0]) : null
         };
+        
         const endProps = {
             dateOnly: true,
             value: end,
             completion: false,
-            startDate: this.state.startDate,
-            endDate: this.state.endDate
+            startDate: this.state.startDate ? moment(this.state.startDate, this.props.format).format(this.props.format.split(' ')[0]) : null,
+            endDate: this.state.endDate ? moment(this.state.endDate, this.props.format).format(this.props.format.split(' ')[0]) : null
         };
 
         const shortcuts = this.renderShortCuts();

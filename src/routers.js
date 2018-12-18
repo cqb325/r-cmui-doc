@@ -10,6 +10,8 @@ const Layout = resolve => require(['./pages/layout/index'], resolve);
 const Breadcrumb = resolve => require(['./pages/breadcrumb/index'], resolve);
 const DateTime = resolve => require(['./pages/datetime/index'], resolve);
 const DateRange = resolve => require(['./pages/daterange/index'], resolve);
+const ScrollDateTime = resolve => require(['./pages/scrolldatetime/index'], resolve);
+const ScrollRangeDateTime = resolve => require(['./pages/scrollrangedatetime/index'], resolve);
 const Pagination = resolve => require(['./pages/pagination/index'], resolve);
 const Input = resolve => require(['./pages/input/index'], resolve);
 const InputGroup = resolve => require(['./pages/inputGroup/index'], resolve);
@@ -46,6 +48,8 @@ const Tag = resolve => require(['./pages/tag/index'], resolve);
 const Grid = resolve => require(['./pages/grid/index'], resolve);
 const Contacts = resolve => require(['./pages/contacts/index'], resolve);
 const ContextMenu = resolve => require(['./pages/contextmenu/index'], resolve);
+const ConfirmButton = resolve => require(['./pages/confirmButton/index'], resolve);
+const SubmitButton = resolve => require(['./pages/submitButton/index'], resolve);
 
 const routers = {
     path: '/',
@@ -81,6 +85,8 @@ const routers = {
         {path: 'Breadcrumb', getComponent: (next, cb) => { Breadcrumb((a) => { cb(null, a.default); }); }},
         {path: 'DateTime', getComponent: (next, cb) => { DateTime((a) => { cb(null, a.default); }); }},
         {path: 'DateRange', getComponent: (next, cb) => { DateRange((a) => { cb(null, a.default); }); }},
+        {path: 'ScrollDateTime', getComponent: (next, cb) => { ScrollDateTime((a) => { cb(null, a.default); }); }},
+        {path: 'ScrollRangeDateTime', getComponent: (next, cb) => { ScrollRangeDateTime((a) => { cb(null, a.default); }); }},
         {path: 'Pagination', getComponent: (next, cb) => { Pagination((a) => { cb(null, a.default); }); }},
         {path: 'Input', getComponent: (next, cb) => { Input((a) => { cb(null, a.default); }); }},
         {path: 'InputGroup', getComponent: (next, cb) => { InputGroup((a) => { cb(null, a.default); }); }},
@@ -116,7 +122,9 @@ const routers = {
         {path: 'Tag', getComponent: (next, cb) => { Tag((a) => { cb(null, a.default); }); }},
         {path: 'Grid', getComponent: (next, cb) => { Grid((a) => { cb(null, a.default); }); }},
         {path: 'Contacts', getComponent: (next, cb) => { Contacts((a) => { cb(null, a.default); }); }},
-        {path: 'ContextMenu', getComponent: (next, cb) => { ContextMenu((a) => { cb(null, a.default); }); }}
+        {path: 'ContextMenu', getComponent: (next, cb) => { ContextMenu((a) => { cb(null, a.default); }); }},
+        {path: 'ConfirmButton', getComponent: (next, cb) => { ConfirmButton((a) => { cb(null, a.default); }); }},
+        {path: 'SubmitButton', getComponent: (next, cb) => { SubmitButton((a) => { cb(null, a.default); }); }}
     ]
 };
 

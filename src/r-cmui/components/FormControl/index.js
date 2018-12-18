@@ -42,16 +42,10 @@ class FormControl extends BaseComponent {
     constructor (props) {
         super(props);
 
-        this.rules = props.rules || {};
-        this.messages = props.messages || {};
         this._isFormItem = props.isFormItem;
-        this._name = props.name;
         this._areaLabel = false;
         this._tipAlign = props.tipAlign;
         this._tipAuto = props.tipAuto;
-        if (props.required) {
-            this.rules['required'] = true;
-        }
         this.item = null;
 
         this.addState({
@@ -81,7 +75,9 @@ class FormControl extends BaseComponent {
                 type: this.props.type,
                 id: this.props.id,
                 key: 'formItem',
-                ref: 'formItem',
+                ref: (f) => {
+                    this.item = f;
+                },
                 'data-valueType': component.valueType
             }, others);
             props.onChange = this.onChange;
@@ -112,7 +108,9 @@ class FormControl extends BaseComponent {
                 let props = Object.assign({
                     key: index,
                     'data-valueType': registerComp.valueType,
-                    ref: 'formItem'
+                    ref: (f) => {
+                        this.item = f;
+                    }
                 }, others);
 
                 props = Object.assign(props, child.props);
@@ -169,7 +167,8 @@ class FormControl extends BaseComponent {
         }
 
         if (!this.item) {
-            this.item = this.refs.formItem;
+            // this.item = this.refs.formItem;
+            return ;
         }
         // chilren自定义
         type = type || this.item.props.type;
@@ -208,6 +207,16 @@ class FormControl extends BaseComponent {
         if (this.props.disabled || this.props.readOnly) {
             return false;
         }
+
+        if (this.item.state && this.item.state.disabled) {
+            return false;
+        }
+
+        // Lable的不需要验证
+        if (this.item && this.item.displayName === 'Label') {
+            return false;
+        }
+
         if (this._isMounted) {
             const ele = Dom.dom(ReactDOM.findDOMNode(this));
             if (ele.width() === 0 && ele.height() === 0) {
@@ -244,8 +253,11 @@ class FormControl extends BaseComponent {
         if (value === undefined) {
             value = this.item.getValue();
         }
-        const rules = this.rules;
-        const messages = this.messages;
+        const rules = this.props.rules || {};
+        if (this.props.required) {
+            rules['required'] = true;
+        };
+        const messages = this.props.messages;
         let rule;
         let result;
 
@@ -291,7 +303,9 @@ class FormControl extends BaseComponent {
             if (typeof url === 'function') {
                 url = url();
             } else {
-                url = this._URLParse(url, {name: value});
+                const params = {};
+                params[this.props.name] = value;
+                url = this._URLParse(url, params);
                 url = this._rebuildURL(url);
             }
 
@@ -401,7 +415,10 @@ class FormControl extends BaseComponent {
         if (result === false) {
             errorTip = (messages && messages[method]) ? messages[method] : Validation.messages[method];
             if (typeof errorTip === 'function') {
-                errorTip = errorTip(rule.parameters);
+                if (!(rule.parameters instanceof Array)) {
+                    rule.parameters = [rule.parameters];
+                }
+                errorTip = errorTip(...rule.parameters);
             }
             this.setState({errorTip});
             this.refs.tooltip.setTitle(errorTip);
@@ -420,12 +437,11 @@ class FormControl extends BaseComponent {
      * @returns {*}
      */
     getReference () {
-        return this.refs['formItem'];
+        return this.item;
     }
 
     componentDidMount () {
         this._isMounted = true;
-        this.item = this.refs['formItem'];
         if (this.props['itemBind'] && this.isFormItem()) {
             this.props['itemBind']({
                 ref: this,
@@ -472,7 +488,7 @@ class FormControl extends BaseComponent {
      * @return {String}  表单名称
      */
     getName () {
-        return this._name;
+        return this.props.name;
     }
 
     /**
@@ -498,28 +514,9 @@ class FormControl extends BaseComponent {
         }
     }
 
-    /**
-     * 动态设置验证规则
-     * @param rule
-     * @param ruleArgs
-     */
-    setRule (rule, ruleArgs) {
-        this.rules[rule] = ruleArgs;
-    }
-
-    /**
-     * 动态设置验证提示消息
-     * @param rule
-     * @param message
-     */
-    setMessage (rule, message) {
-        this.messages[rule] = message;
-    }
-
     componentWillUnmount () {
         this._isMounted = false;
 
-        this.item = this.refs['formItem'];
         if (this.props['itemUnBind'] && this.isFormItem()) {
             this.props['itemUnBind'](this.props.name);
         }

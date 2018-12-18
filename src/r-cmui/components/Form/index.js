@@ -115,6 +115,20 @@ class Form extends BaseComponent {
     }
 
     /**
+     * onChange事件回调
+     * @param {*} value 
+     * @param {*} selectItem 
+     * @param {*} option 
+     * @param {*} control 
+     */
+    onChange (value, selectItem, option, control) {
+        if (this.props.onChange) {
+            this.props.onChange(value, selectItem, option, control);
+        }
+        this.emit('change', value, selectItem, option, control);
+    }
+
+    /**
      * 渲染子元素
      * @method renderChildren
      * @returns {*}
@@ -133,7 +147,13 @@ class Form extends BaseComponent {
                 props.tipTheme = this.props.tipTheme ? this.props.tipTheme : props.tipTheme;
                 props.tipAlign = tipAlign;
                 props.tipAuto = this.props.tipAuto ? this.props.tipAuto : props.tipAuto;
-                props.labelWidth = this.props.labelWidth ? this.props.labelWidth : props.labelWidth;
+                props.labelWidth = props.labelWidth || this.props.labelWidth;
+                const changeHandler = props.onChange || function () {};
+                const scope = this;
+                props.onChange = function (value, selectItem, option) {
+                    changeHandler.apply(this, [value, selectItem, option]);
+                    scope.onChange(value, selectItem, option, this);
+                };
                 if (componentName === 'FormControl') {
                     props.value = this.props.data ? this.props.data[props.name] : props.value;
                 }
@@ -143,7 +163,7 @@ class Form extends BaseComponent {
                 return React.cloneElement(child, props);
             } else if (componentName === 'Promote') {
                 const props = Object.assign({
-                    labelWidth: this.props.labelWidth ? this.props.labelWidth : child.props.labelWidth
+                    labelWidth: child.props.labelWidth || this.props.labelWidth
                 }, child.props);
                 return React.cloneElement(child, props);
             } else {
@@ -232,17 +252,30 @@ class Form extends BaseComponent {
 
     /**
      * 设置表单初始值
+     * setData需要延迟执行，如果某个FormControl的type是动态设置的，
+     * 在当前组件中会先执行setData后支持render 那么FormControl的值就设置不进去
+     * 所以必须延迟执行
      */
-    setData (data) {
-        for (const name in this.items) {
-            const item = this.items[name];
-            const val = data[name];
-            if (item.ref.setValue && val != undefined) {
-                item.ref.setValue(val);
+    setData (data, immediateValid) {
+        window.setTimeout(() => {
+            for (const name in this.items) {
+                const item = this.items[name];
+                const val = data[name];
+                if (item.ref.setValue && val != undefined) {
+                    item.ref.setValue(val);
+                }
             }
-        }
-
-        this.isValid();
+    
+            // 先消除所有的验证信息 防止之前的验证错误信息遗留
+            this.resetValid();
+            // setValue是通过setState执行的，是异步操作  所以
+            // 验证需要等setState执行完成
+            if (immediateValid) {
+                window.setTimeout(() => {
+                    this.isValid();
+                }, 0);
+            }
+        }, 0);
     }
 
     /**

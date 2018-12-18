@@ -67,9 +67,18 @@ class Popup extends PureComponent {
 
         this.scrollElements.forEach((ele) => {
             Events.on(ele, 'scroll', () => {
+                // if (!ele.flag) {
+                //     ele.flag = true;
+                //     if (this.timer) {
+                //         clearTimeout(this.timer);
+                //     }
+                //     this.timer = window.setTimeout(() => {
                 if (this.state.visible && this._isMounted) {
                     this.update(this.state.visible);
                 }
+                //     ele.flag = false;
+                // }, 100);
+                // }
             });
         });
     }
@@ -163,10 +172,6 @@ class Popup extends PureComponent {
             // window.setTimeout(()=>{
             //     tip.hide();
             // }, this.props.delay || 0);
-        }
-
-        if (this.props.onVisibleChange) {
-            this.props.onVisibleChange(visible);
         }
     }
 

@@ -1,9 +1,8 @@
-
 const pickFiles = require('./utils').pickFiles;
 const paths = require('./paths');
 
 let alias = {};
 alias = Object.assign(alias, {
-    'r-cmui': paths.appSrc + '/r-cmui'
+    'r-cmui': `${paths.appSrc}/r-cmui`
 });
 module.exports = alias;

@@ -15,9 +15,9 @@ class Demo extends BaseDemo {
                     <Tag badge={112}>总分</Tag>
                 </div>
                 <div className='code-box-desc'>
-                    <div className='code-box-title'>基本用法</div>
+                    <div className='code-box-title'>带badge的Tag</div>
                     <div>
-                        简单用法 theme 可选为 primary、danger、warning、success、info
+                        通过badge参数展示额外数据
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>

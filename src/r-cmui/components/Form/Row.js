@@ -15,17 +15,25 @@ class Row extends React.Component {
                     'itemUnBind': this.props['itemUnBind']
                 }, child.props);
                 props.layout = this.props.layout ? this.props.layout : props.layout;
-                props.labelWidth = this.props.labelWidth ? this.props.labelWidth : props.labelWidth;
+                props.labelWidth = props.labelWidth || this.props.labelWidth;
                 if (componentName === 'FormControl') {
                     props.value = this.props.data ? this.props.data[props.name] : props.value;
                 }
+                const changeHandler = props.onChange || function () {};
+                const scope = this;
+                props.onChange = function (value, selectItem, option) {
+                    changeHandler.apply(this, [value, selectItem, option]);
+                    if (scope.props.onChange) {
+                        scope.props.onChange.apply(this, [value, selectItem, option]);
+                    }
+                };
                 if (componentName === 'Row') {
                     props.data = this.props.data;
                 }
                 return React.cloneElement(child, props);
             } else if (componentName === 'Promote') {
                 const props = Object.assign({
-                    labelWidth: this.props.labelWidth ? this.props.labelWidth : child.props.labelWidth
+                    labelWidth: child.props.labelWidth || this.props.labelWidth
                 }, child.props);
                 return React.cloneElement(child, props);
             } else {

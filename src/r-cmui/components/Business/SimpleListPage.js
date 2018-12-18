@@ -17,7 +17,8 @@ class SimpleListPage extends React.Component {
         pageSize: 10,
         bordered: true,
         pagination: false,
-        theme: 'default'
+        theme: 'default',
+        autoSearch: false
     }
 
     static propTypes = {
@@ -31,7 +32,8 @@ class SimpleListPage extends React.Component {
         searchBtn: PropTypes.oneOfType([PropTypes.string,PropTypes.func]),
         searchParams: PropTypes.oneOfType([PropTypes.object,PropTypes.func]),
         afterRequest: PropTypes.func,
-        condition: PropTypes.func
+        condition: PropTypes.func,
+        autoSearch: PropTypes.bool
     }
 
     state = {
@@ -77,6 +79,13 @@ class SimpleListPage extends React.Component {
             }
         }
 
+        // 去掉参数值后面的空格
+        for (const key in params) {
+            if (typeof params[key] == 'string') {
+                params[key] = params[key].trim();
+            }
+        }
+
         return params;
     }
 
@@ -110,6 +119,29 @@ class SimpleListPage extends React.Component {
     getParamsByConditionForm (params) {
         if (this.form) {
             const ps = this.form.getFormParams();
+            for (const name in this.form.items) {
+                const item = this.form.items[name];
+                let clazz = '';
+                if (item.ref.item.constructor.name) {
+                    clazz = item.ref.item.constructor.name;
+                } else {
+                    const matches = item.ref.item.constructor.toString().match(/function\s*([^(]*)\(/);
+                    if (matches) {
+                        clazz = matches[1];
+                    }
+                }
+                if (item.ref.item && clazz === 'DateRange') {
+                    const v = ps[name];
+                    delete ps[name];
+                    if (v && v.length) {
+                        ps[item.ref.item.props.startName] = v[0];
+                        ps[item.ref.item.props.endName] = v[1];
+                    } else {
+                        ps[item.ref.item.props.startName] = '';
+                        ps[item.ref.item.props.endName] = '';
+                    }
+                }
+            }
             Object.assign(params, ps);
         }
     }
@@ -118,21 +150,27 @@ class SimpleListPage extends React.Component {
      * 查询
      */
     search = async (page, pageSize) => {
-        this.setState({spinning: true});
-        const ret = await fetch(this.props.action, this.getSearchParams(page, pageSize), 'GET', (error) => {
-            console.log('get Table Data error!', error);
-        });
-        if (ret) {
-            this.refs.table.setData(ret.data);
-            if (this.refs.pagination) {
-                this.refs.pagination.update({total: ret.total, current: ret.pageNum, pageSize: ret.pageSize});
+        try {
+            this.setState({spinning: true});
+            const ret = await fetch(this.props.action, this.getSearchParams(page, pageSize), 'GET', {
+                fail: (error) => {
+                    console.log(window.RCMUI_I18N['SimpleListPage.fetchDataError'], error);
+                }
+            });
+            if (ret) {
+                this.refs.table.setData(ret.data);
+                if (this.refs.pagination) {
+                    this.refs.pagination.update({total: ret.total, current: ret.pageNum, pageSize: ret.pageSize});
+                }
+                
+                this.setState({spinning: false});
+                
+                if (this.props.afterRequest) {
+                    this.props.afterRequest(ret.data);
+                }
             }
-            
-            this.setState({spinning: false});
-            
-            if (this.props.afterRequest) {
-                this.props.afterRequest(ret.data);
-            }
+        } catch (e) {
+            console.log(e);
         }
     }
 
@@ -185,6 +223,11 @@ class SimpleListPage extends React.Component {
                     this.clickSearch();
                     return false;
                 };
+                if (this.props.autoSearch) {
+                    this.form.on('change', () => {
+                        this.clickSearch();
+                    });
+                }
             }
         }
 

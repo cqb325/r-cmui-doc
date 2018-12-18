@@ -19,9 +19,9 @@ class Demo extends BaseDemo {
                     <Tags data={data} closable theme='primary'/>
                 </div>
                 <div className='code-box-desc'>
-                    <div className='code-box-title'>基本用法</div>
+                    <div className='code-box-title'>data数据</div>
                     <div>
-                        简单用法 theme 可选为 primary、danger、warning、success、info
+                        可以根据传入的data数据参数渲染tag
                         <FontIcon icon={'chevron-circle-down'} ref='collapse' className='collapse' onClick={this.openCloseCode.bind(this)}></FontIcon>
                     </div>
                 </div>

@@ -72,6 +72,26 @@ class Date extends BaseComponent {
         });
     }
 
+    /**
+     * 设置开始时间
+     * @param {*} value 
+     */
+    setStartDate (value) {
+        this.setState({
+            startDate: value
+        });
+    }
+
+    /**
+     * 设置允许的结束时间
+     * @param {*} value 
+     */
+    setEndDate (value) {
+        this.setState({
+            endDate: value
+        });
+    }
+
     setMonthOnly () {
         this.minStage = 2;
         this.maxStage = 3;
@@ -338,6 +358,7 @@ class Date extends BaseComponent {
         first.set('hour', 0);
         first.set('minute', 0);
         first.set('second', 0);
+        first.set('millisecond', 0);
         const end = moment(first).add(1, 'months').add(-1, 'days');
         const min = 1 - first.weekday();
         const max = (Math.ceil((end.get('date') - min + 1) / 7) * 7);
@@ -474,7 +495,7 @@ class Date extends BaseComponent {
         const endDate = this.state.endDate;
 
         const ret = [];
-        const months = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+        const months = window.RCMUI_I18N['DateTime.month'];
         for (let i = 0; i < 12; i++) {
             let disabled = false;
             if (startDate) {
@@ -595,7 +616,7 @@ class Date extends BaseComponent {
      * @private
      */
     _getWeek () {
-        return ['日', '一', '二', '三', '四', '五', '六'].map((w, i) => {
+        return window.RCMUI_I18N['DateTime.week'].map((w, i) => {
             return <div key={i} className='week'>{w}</div>;
         });
     }
@@ -649,10 +670,10 @@ class Date extends BaseComponent {
             return (
                 <div className='date-picker-footer'>
                     <a className='clear' onClick={this.clear.bind(this)}>
-                        清除
+                        {window.RCMUI_I18N['DateTime.clear']}
                     </a>
                     <a className='today-btn' onClick={this.today.bind(this)}>
-                        今天
+                        {window.RCMUI_I18N['DateTime.today']}
                     </a>
                 </div>
             );
@@ -739,8 +760,8 @@ class Date extends BaseComponent {
      */
     setValue (value) {
         this.setState({
-            value,
-            current: moment(value)
+            value: value || '',
+            current: value ? moment(value) : moment()
         });
     }
 

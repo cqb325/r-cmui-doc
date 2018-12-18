@@ -64,6 +64,8 @@ class Page extends PureComponent {
                     {param: 'success', desc: '提交成功回调', type: 'function', default: ''},
                     {param: 'error', desc: '提交失败回调', type: 'function', default: ''},
                     {param: 'submit', desc: '自定义提交操作方法', type: 'function', default: ''},
+                    {param: 'onChange', desc: '表单变化回调', type: 'function', default: ''},
+                    {param: 'beforeSubmit', desc: '提交前表单变化回调', type: 'function', default: ''},
                     {param: 'submitText', desc: '默认提交按钮的显示文字', type: 'string', default: '保 存'},
                     {param: 'encType', desc: '表单有上传文件时的encType', type: 'string', default: ''}
                 ]}></Table>
@@ -123,6 +125,26 @@ class Page extends PureComponent {
                         <ul>
                             <li>
                                 return {'Boolean'} true/false
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i>reset()</i>
+                        <span>重置表单数据</span>
+                    </li>
+                    <li>
+                        <i>resetValid()</i>
+                        <span>重置表单提示</span>
+                    </li>
+                    <li>
+                        <i>setData(data, immediateValid)</i>
+                        <span>设置数据</span>
+                        <ul>
+                            <li>
+                                data {'object'} 表单数据
+                            </li>
+                            <li>
+                                immediateValid {'bool'} 设置完后直接进行表单验证
                             </li>
                         </ul>
                     </li>

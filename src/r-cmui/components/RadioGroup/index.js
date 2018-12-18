@@ -308,8 +308,9 @@ class RadioGroup extends BaseComponent {
     }
 
     componentWillReceiveProps (nextProps) {
-        if (nextProps.value !== this.props.value && nextProps.value !== this.state.value) {
-            this.setValue(nextProps.value);
+        const value = nextProps.value;
+        if (value !== this.props.value && value !== this.state.value) {
+            this.setValue(value);
         }
     }
 
@@ -325,7 +326,7 @@ class RadioGroup extends BaseComponent {
         );
 
         return (
-            <span className={className}>
+            <span className={className} style={this.props.style}>
                 {this.renderChildrenItems()}
                 {this._renderItems()}
             </span>

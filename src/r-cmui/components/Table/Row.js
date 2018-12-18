@@ -3,6 +3,7 @@ import BaseComponent from '../core/BaseComponent';
 import UUID from '../utils/UUID';
 import CheckBox from '../CheckBox/index';
 import Dom from '../utils/Dom';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 /**
@@ -18,9 +19,15 @@ class Row extends BaseComponent {
         identify: UUID.v4()
     };
 
+    static contextTypes = {
+        bindRow: PropTypes.func,
+        unBindRow: PropTypes.func
+    }
+
     constructor (props) {
         super(props);
 
+        props.data._show = props.data._show || true;
         this.addState({
             data: props.data
         });
@@ -64,12 +71,14 @@ class Row extends BaseComponent {
         if (this.refs.checkbox) {
             this.props.table.bindCheckBox(this.identify, {checkbox: this.refs.checkbox, row: this});
         }
+        this.context.bindRow(this.identify, this);
     }
 
     componentWillUnmount () {
         if (this.refs.checkbox) {
             this.props.table.unBindCheckBox(this.identify);
         }
+        this.context.unBindRow(this.identify);
     }
 
     renderData () {
@@ -131,9 +140,13 @@ class Row extends BaseComponent {
         return text;
     }
 
+    display (display) {
+        this.ele.style.display = display ? '' : 'none';
+    }
+
     render () {
         return (
-            <tr data-row={this.props.row}>
+            <tr data-row={this.props.row} ref={(f) => this.ele = f} style={{display: this.state.data._show ? '' : 'none'}}>
                 {this.renderData()}
             </tr>
         );
